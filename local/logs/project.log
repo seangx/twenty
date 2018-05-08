@@ -1,0 +1,104 @@
+2018-05-05T05:09:08.885Z - normal: Load ~/.CocosCreator/settings.json
+2018-05-05T05:09:08.889Z - normal: checking language setting...
+2018-05-05T05:09:08.889Z - normal: Language: zh
+2018-05-05T05:09:09.929Z - success: protocol editor-framework registered
+2018-05-05T05:09:09.930Z - success: protocol app registered
+2018-05-05T05:09:09.931Z - success: protocol theme registered
+2018-05-05T05:09:09.931Z - success: protocol packages registered
+2018-05-05T05:09:09.931Z - success: protocol unpack registerred
+2018-05-05T05:09:09.931Z - success: protocol disable-commonjs registerred
+2018-05-05T05:09:10.047Z - normal: connected!
+2018-05-05T05:09:10.051Z - normal: Check project /Users/gaoxiang/color-crush
+2018-05-05T05:09:10.053Z - normal: Initializing Cocos2d
+2018-05-05T05:09:10.349Z - normal: Initializing Asset Database
+2018-05-05T05:09:10.392Z - success: protocol uuid registerred
+2018-05-05T05:09:10.392Z - success: protocol db registerred
+2018-05-05T05:09:10.392Z - success: protocol thumbnail registerred
+2018-05-05T05:09:10.392Z - normal: Loading editor/builtin packages
+2018-05-05T05:09:10.417Z - success: anysdk loaded
+2018-05-05T05:09:10.562Z - success: assets loaded
+2018-05-05T05:09:10.567Z - success: builder loaded
+2018-05-05T05:09:10.570Z - success: cocos-analytics loaded
+2018-05-05T05:09:10.576Z - success: console loaded
+2018-05-05T05:09:10.624Z - success: fb-instant-games loaded
+2018-05-05T05:09:10.634Z - success: hierarchy loaded
+2018-05-05T05:09:10.640Z - success: inspector loaded
+2018-05-05T05:09:10.642Z - success: keystore loaded
+2018-05-05T05:09:10.652Z - success: node-library loaded
+2018-05-05T05:09:10.655Z - success: package-asset loaded
+2018-05-05T05:09:10.657Z - success: preferences loaded
+2018-05-05T05:09:10.661Z - success: project-exporter loaded
+2018-05-05T05:09:10.682Z - success: project-importer loaded
+2018-05-05T05:09:10.686Z - success: project-settings loaded
+2018-05-05T05:09:10.691Z - success: ui-kit loaded
+2018-05-05T05:09:10.698Z - success: ui-grid loaded
+2018-05-05T05:09:10.704Z - success: scene loaded
+2018-05-05T05:09:10.705Z - success: sprite-editor loaded
+2018-05-05T05:09:10.711Z - success: store loaded
+2018-05-05T05:09:10.719Z - success: timeline loaded
+2018-05-05T05:09:10.719Z - normal: Loading builtin packages
+2018-05-05T05:09:10.724Z - success: asset-db-debugger loaded
+2018-05-05T05:09:10.725Z - success: color-picker loaded
+2018-05-05T05:09:10.729Z - success: package-manager loaded
+2018-05-05T05:09:10.736Z - success: sdkbox loaded
+2018-05-05T05:09:10.742Z - success: tester loaded
+2018-05-05T05:09:10.748Z - success: ui-kit-preview-extra loaded
+2018-05-05T05:09:10.752Z - success: ui-kit-preview loaded
+2018-05-05T05:09:10.755Z - success: ui-tree loaded
+2018-05-05T05:09:12.069Z - normal: Initializing project /Users/gaoxiang/color-crush
+2018-05-05T05:09:12.073Z - normal: Loading packages
+2018-05-05T05:09:12.078Z - normal: Watching packages
+2018-05-05T05:09:12.092Z - normal: Run Application
+2018-05-05T05:09:13.023Z - success: preview server running at http://localhost:7456
+2018-05-05T05:09:19.422Z - normal: 1.9.0
+2018-05-05T05:10:29.618Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:2335
+2018-05-05T05:10:45.158Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:2552
+2018-05-05T05:12:25.749Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:4643
+2018-05-05T05:17:33.858Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:10495
+2018-05-05T05:18:04.919Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:10877
+2018-05-05T05:20:16.668Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:13009
+2018-05-05T05:20:16.671Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:13013
+2018-05-05T05:20:41.853Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:13422
+2018-05-05T05:24:27.589Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:17545
+2018-05-05T07:09:19.588Z - failed: [db-task][sync-changes] Failed to import asset /Users/gaoxiang/color-crush/assets/Script/prefab/cube.js, message: Compile error: SyntaxError: /Users/gaoxiang/color-crush/assets/Script/prefab/cube.js: Unexpected token (92:8)
+  90 |   onCollisionExit: function (other, self) {
+  91 |     cc.log("on collision exit");
+> 92 |     if ()
+     |         ^
+  93 |   }
+  94 | });
+  95 | 
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1761:8)
+    at Parser.pp$3.parseExprAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3750:12)
+    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3306:19)
+    at Parser.pp$3.parseParenExpression (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3789:18)
+2018-05-06T17:10:50.581Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:1100748
+2018-05-06T17:11:07.531Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:1101013
+2018-05-06T17:24:42.238Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:1117094
+2018-05-06T17:25:01.212Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:1117344
+2018-05-06T17:25:55.997Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:1118261
+2018-05-06T17:55:29.041Z - failed: [db-task][sync-changes] Failed to import asset /Users/gaoxiang/color-crush/assets/Script/prefab/cube.js, message: Compile error: SyntaxError: /Users/gaoxiang/color-crush/assets/Script/prefab/cube.js: Unexpected token (100:2)
+   98 |     // }
+   99 |     selfCollider.
+> 100 |   },
+      |   ^
+  101 | 
+  102 |   // moveCube(diff,touchPos){
+  103 |   //   let max=gameManager.getLimitPosition(touchPos,this.node);
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1761:8)
+    at Parser.pp$3.parseIdentifier (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4332:10)
+    at Parser.pp$3.parseSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3517:30)
+    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3504:15)
+    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3306:19)
+2018-05-07T02:28:24.234Z - info: shutdown preview server
