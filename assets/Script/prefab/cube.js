@@ -13,12 +13,14 @@ cc.Class({
   extends: cc.Component,
 
   properties: {
-    level: 1,
-    labelLevel:cc.Label,
+    level: 0,
     state:{
       default:CubeState.Normal,
       type:CubeState
     },
+    cell:cc.p(0,0),
+    levelFrames:[cc.SpriteFrame],
+    background:cc.Sprite,
   },
 
   // LIFE-CYCLE CALLBACKS:
@@ -26,158 +28,237 @@ cc.Class({
   onLoad() {
     this.node.on(cc.Node.EventType.TOUCH_START,this.onTouchStart,this);
     this.node.on(cc.Node.EventType.TOUCH_MOVE,this.onTouchMove,this);
+    // this.gameNode = cc.find("/Canvas/game-node", cc.director.getRunningScene());
+    this.node.on(cc.Node.EventType.TOUCH_CANCEL,this.onTouchEnd,this);
     this.node.on(cc.Node.EventType.TOUCH_END,this.onTouchEnd,this);
 
     this.node.on("level-up",this.onLevelUp,this);
 
-    this.moveCtl={
-      up:true,
-      down:true,
-      left:true,
-      right:true
-    }
+    this.node.on("move-up",this.onMoveUp,this);
+
+    this.touchStartPos=cc.p(0,0);
   },
+
+  // destroy(){
+  //   this.gameNode.off(cc.Node.EventType.TOUCH_END,this.onTouchEnd,this);
+  // },
 
   onLevelUp(){
     this.level++;
-    this.labelLevel.string=this.level;
+    gameManager.levelChange(this.level);
+    this.safeChangeLevelFrame();
+    gameManager.playDeadAction(this.node.position);
+    gameManager.playBombSound();
   },
 
+  safeChangeLevelFrame(){
+    if (this.level>=this.levelFrames.length){
+      this.level=this.levelFrames.length-1;
+    }
+    this.background.spriteFrame=this.levelFrames[this.level];
+  },
 
-  init(edges) {
-    this.labelLevel.string=this.level;
+  init(cell,level) {
+    this.cell=cell;
+    this.level=level;
+    // this.
+    this.safeChangeLevelFrame();
+    // this.setState(CubeState.Block);
   },
 
   start() {
 
   },
 
+  setCellPos(cell){
+    this.cell=cell;
+  },
+
   setState(state) {
+    cc.log(cc.js.formatStr("set state,old:%d,new:%d,pos:%v",this.state,state,this.cell));
+    if (this.state===CubeState.Bombing){
+      cc.error("cube is marking dead");
+      return;
+    }
     if (this.state===state){
       return;
+    }
+    switch (state){
+      case CubeState.Normal:{
+        gameManager.cubeMoved(this.node);
+        break;
+      }
+      case CubeState.TouchMove:{
+        break;
+      }
+      case CubeState.Touched:
+      case CubeState.FallingDown:{
+        this.activePhysics();
+        // this.resetX();
+      }
+      case CubeState.FallingBottom:{
+        break;
+      }
     }
     this.state=state;
   },
 
   update(dt) {
-    if (this.state === CubeState.Bombing) {
-      this.node.removeFromParent();
+    switch (this.state){
+      case CubeState.Bombing:{
+        gameManager.removeCube(this.node);
+        break;
+      }
+      case CubeState.TouchMove:{
+        break;
+      }
+      case CubeState.Normal:{
+        this.disablePhysics();
+        this.checkFallingDown();
+        break;
+      }
+      case CubeState.FallingBottom:{
+        this.resetY();
+        this.setState(CubeState.Normal);
+        break;
+      }
+    }
+    //非touch状态时进行触底检查
+    if (this.state!==CubeState.Touched&&this.state!==CubeState.TouchMove){
+      if (this.node.y<this.node.height/2+gameManager.space){
+        this.setState(CubeState.FallingBottom);
+      }
     }
   },
 
   onTouchStart(touch){
+    cc.log("on touch start");
     this.setState(CubeState.Touched);
-    this.node.getComponent(cc.PhysicsCollider).body.awake=true;
-    this.node.getComponent(cc.PhysicsCollider).body.type=cc.RigidBodyType.Dynamic;
+    // let body=this.node.getComponent(cc.RigidBody);
+    // body.awake=true;
+    // body.type=cc.RigidBodyType.Dynamic;
 
+    this.activePhysics();
+    this.touchStartPos=touch.getLocation();
   },
 
   onTouchEnd(touch){
-    // this.setState(CubeState.FallingDown);
+    cc.log("on touch end");
+    this.node.parent.emit(cc.Node.EventType.TOUCH_END);   //告知touch关节触摸结束
+    if (this.state!==CubeState.Touched&&this.state!==CubeState.TouchMove){
+      return;
+    }
+    //重置mouse关节的冲量
+    this.disablePhysics();
+    this.setState(CubeState.FallingDown);
+    this.resetX();
 
+    this.touchStartPos=cc.p(0,0);
   },
 
   onTouchMove(touch){
-    let touchPos=this.node.parent.convertTouchToNodeSpaceAR(touch);
-    this.node.position=touchPos;
-    // let diff=cc.pSub(touchPos,this.node.position);
-    // this.moveCube(diff,touchPos);
+    cc.log("on touch moved");
+    let dis=cc.pDistance(cc.pSub(touch.getLocation(),this.touchStartPos),cc.p(0,0));
+    if (dis>3){
+      if (this.state===CubeState.Touched){
+        this.setState(CubeState.TouchMove);
+        // gameManager.cubeMove(this.cell);
+
+      }
+    }
   },
 
-
-
-  // 只在两个碰撞体开始接触时被调用一次
-  onBeginContact: function (contact, selfCollider, otherCollider) {
-    // this.node.getComponent(cc.PhysicsCollider).body.type=cc.RigidBodyType.Static;
-
-    let cube1=selfCollider.node.getComponent("cube");
-    let cube2=otherCollider.node.getComponent("cube");
-    if (!cube1||!cube2){
-      return;
-    }
+  checkBombing(cube1,cube2){
     if (cube1.level !== cube2.level) {
-      return;
+      return false;
     }
+
     if (cube1.state === CubeState.Bombing) {
+      return false;
+    }
+
+    if (cube1.state===CubeState.TouchMove||cube1.state===CubeState.FallingDown){
+      return true;
+    }
+    return false;
+  },
+
+  //仅动态类型才处理碰撞
+  onBeginContact: function (contact, selfCollider, otherCollider) {
+    if (selfCollider.body.type===cc.RigidBodyType.Static){
       return;
     }
 
-    if (cube1.state===CubeState.Touched||cube1.state===CubeState.FallingDown){
-      cube1.setState(CubeState.Bombing);
-      cube2.node.emit("level-up");
+    let cubeSelf=selfCollider.node.getComponent("cube");
+    let cubeOther=otherCollider.getComponent("cube");
+    if (!cubeSelf||!cubeOther){
+      return;
     }
-    // contact.disabledOnce=true;
-    // selfCollider.body.type=cc.RigidBodyType.Kinematic;
+
+    if (this.checkBombing(cubeSelf,cubeOther)){
+      cubeSelf.setState(CubeState.Bombing);
+      cubeOther.node.emit("level-up");
+    }
+
+    if (cubeSelf.state===CubeState.FallingDown){
+      cubeSelf.setState(CubeState.FallingBottom);
+    }
+  },
+  // 每次处理完碰撞体接触逻辑时被调用
+  onPostSolve: function (contact, selfCollider, otherCollider) {
+    if (selfCollider.body.type===cc.RigidBodyType.Static){
+      return;
+    }
   },
 
-  // 每次将要处理碰撞体接触逻辑时被调用
-  onPreSolve: function (contact, selfCollider, otherCollider) {
-    // if (otherCollider.node.getComponent("cube")) {
-    //   contact.disabledOnce=true;
-    // }
-
-
+  // 每次处理完碰撞体接触逻辑时被调用
+  onPostSolve: function (contact, selfCollider, otherCollider) {
+    if (selfCollider.body.type===cc.RigidBodyType.Static){
+      return;
+    }
+  },
+  resetY(){
+    //更新cube的y坐标
+    cc.log("reset y called");
+    let cell=gameManager.posToPoint(this.node.position);
+    this.node.y=gameManager.rowPositions[cell.row];
+  },
+  resetX(){
+    //更新cube的x坐标
+    cc.log("reset x called");
+    let cell=gameManager.posToPoint(this.node.position);
+    this.node.x=gameManager.columnPositions[cell.column];
+    cc.log("reset x,new x:"+this.node.x.toString());
   },
 
+  activePhysics(){
+    let body=this.node.getComponent(cc.RigidBody);
+    body.awake=true;
+    body.type=cc.RigidBodyType.Dynamic;
+  },
 
-  // moveCube(diff,touchPos){
-  //   let max=gameManager.getLimitPosition(touchPos,this.node);
-  //   if ((diff.x>0&&this.moveCtl.right)||(diff.x<0&&this.moveCtl.left)){
-  //     this.node.x+=diff.x;
-  //     if (diff.x>0){
-  //       this.node.x=Math.min(this.node.x,max.x);
-  //     } else{
-  //       this.node.x=Math.max(this.node.x,max.x);
-  //     }
-  //   }
-  //
-  //   if ((diff.y>0&&this.moveCtl.up)||(diff.y<0&&this.moveCtl.down)){
-  //     this.node.y+=diff.y;
-  //     if (diff.y>0){
-  //       this.node.y=Math.min(this.node.y,max.y);
-  //     } else{
-  //       this.node.y=Math.max(this.node.y,max.y);
-  //     }
-  //   }
-  // },
-  //
-  // updateMoveDir(otherNode,selfNode){
-  //   let otherBox=otherNode.getBoundingBox();
-  //   let selfBox=selfNode.getBoundingBox();
-  //   if (Math.abs((otherBox.x - selfBox.x)) > selfBox.width/2) { //横向碰撞
-  //     if((selfBox.x-otherBox.x)<=selfBox.width&&(selfBox.x-otherBox.x)>0){
-  //       this.moveCtl.left=false;
-  //     }else{
-  //       this.moveCtl.left=true;
-  //     }
-  //
-  //     if((otherBox.x-selfBox.x)<=selfBox.width&&(otherBox.x-selfBox.x)>0){
-  //       this.moveCtl.right=false;
-  //     }else{
-  //       this.moveCtl.right=true;
-  //     }
-  //   }else{
-  //     if((otherBox.y-selfBox.y)<=selfBox.height&&(otherBox.y-selfBox.y)>0){
-  //       this.moveCtl.up=false;
-  //     }else{
-  //       this.moveCtl.up=true;
-  //     }
-  //
-  //     if((selfBox.y-otherBox.y)<=selfBox.height&&(selfBox.y-otherBox.y)>0){
-  //       this.moveCtl.down=false;
-  //     }else{
-  //       this.moveCtl.down=true;
-  //     }
-  //   }
-  // },
-  //
-  // onCollisionEnter: function (other, self) {
-  //   cc.log("on collision enter");
-  //   this.updateMoveDir(other.node,self.node);
-  // },
-  //
-  // onCollisionExit: function (other, self) {
-  //   cc.log("on collision exit");
-  //   this.updateMoveDir(other.node,self.node);
-  // }
+  disablePhysics(){
+    let body=this.node.getComponent(cc.RigidBody);
+    if (body.type!==cc.RigidBodyType.Static){
+      body.type=cc.RigidBodyType.Static;
+    }
+  },
+
+  checkFallingDown(){
+    if (this.cell.row<=0){
+      return;
+    }
+    let downCube=gameManager.getCube(this.cell.row-1,this.cell.column);
+    if (!downCube){
+      this.setState(CubeState.FallingDown);
+    }
+  },
+  onMoveUp(){
+    this.setState(CubeState.Block);
+    let moveTo=cc.moveTo(0.2,cc.pAdd(this.node.position,cc.p(0,this.node.height+gameManager.space)));
+    this.node.runAction(cc.sequence(moveTo,cc.callFunc(()=>{
+      gameManager.cubeMoved(this.node);
+      this.setState(CubeState.Normal);
+    })));
+  },
 });

@@ -5,8 +5,11 @@ const CubeColors=cc.Enum({
 const CubeState=cc.Enum({
   Normal:-1,
   Touched:-1,
+  TouchMove:-1,
   FallingDown:-1,
+  FallingBottom:-1,
   Bombing:-1,
+  Block:-1,
 });
 
 

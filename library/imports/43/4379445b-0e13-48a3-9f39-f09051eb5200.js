@@ -11,19 +11,30 @@ var GameManager = cc.Class({
   properties: {
     rowCount: 8,
     columnCount: 7,
-    space: 20,
+    space: 14,
 
     cubes: [],
+    columnPositions: [],
+    rowPositions: [],
     cubeTemplate: cc.Node,
     cubePrefabs: [],
     gameNode_: null,
 
     halfWidth: 0,
-    halfHeight: 0
+    halfHeight: 0,
+
+    maxLevel: 2,
+    leftTime: 10,
+    newLineTime: 10,
+    isPause: 0,
+
+    mainNode: cc.Node
   },
 
-  init: function init(prefabs) {
+  init: function init(prefabs, mainNode, auSource) {
+    this.mainNode = mainNode;
     this.gameNode_ = cc.find("/Canvas/game-node", cc.director.getRunningScene());
+    this.gameNode_.getChildByName("particle").zIndex = 2;
     this.cubePrefabs = prefabs;
 
     this.halfWidth = this.gameNode_.width / 2;
@@ -31,8 +42,38 @@ var GameManager = cc.Class({
 
     this.cubeTemplate = cc.instantiate(this.cubePrefabs[0]);
 
-    this.initCubes();
+    this.au_ = auSource;
+
+    this.reset();
     cc.log("game manager init");
+  },
+  restart: function restart() {
+    this.reset();
+    this.mainNode.getComponent(cc.Animation).play("game-restart");
+  },
+  reset: function reset() {
+    this.clear();
+
+    this.isPause = false;
+    this.leftTime = this.newLineTime;
+    this.maxLevel = 2;
+    this.initCubes();
+  },
+  clear: function clear() {
+    this.foreachCubes(function (item, cell) {
+      if (item) {
+        item.removeFromParent();
+      }
+    });
+    // this.gameNode_.removeAllChildren(true);
+  },
+  foreachCubes: function foreachCubes(cb) {
+    for (var i = 0; i < this.cubes.length; i++) {
+      var row = this.cubes[i];
+      for (var j = 0; j < row.length; j++) {
+        cb(row[j], { row: i, column: j });
+      }
+    }
   },
   randColorCube: function randColorCube() {
     var max = _consts.CubeColors.Blue + 1;
@@ -41,29 +82,43 @@ var GameManager = cc.Class({
   },
   initCubes: function initCubes() {
     this.cubes = [];
+    //初始化数组
     for (var i = 0; i < this.rowCount; i++) {
-      this.cubes.push([]);
       var tmp = [];
       for (var j = 0; j < this.columnCount; j++) {
         tmp.push(null);
+        //cube的x坐标
+        if (this.columnPositions.length < this.columnCount) {
+          this.columnPositions.push(this.space + this.cubeTemplate.width / 2 + (this.cubeTemplate.width + this.space) * j);
+        }
+        //cube的y坐标
+        if (this.rowPositions.length < this.rowCount) {
+          this.rowPositions.push(this.space + this.cubeTemplate.height / 2 + (this.cubeTemplate.height + this.space) * j);
+        }
       }
       this.cubes.push(tmp);
     }
-    for (var _i = 0; _i < 3; _i++) {
+
+    //初始化cube
+    for (var _i = 0; _i < 2; _i++) {
       for (var _j = 0; _j < this.columnCount; _j++) {
         var cube = this.randColorCube();
         if (!cube) {
           cc.error("init cube fail");
           return;
         }
-        // cube.getComponent("cube").init();
+        cube.getComponent("cube").init({ row: _i, column: _j }, this.randLevel());
         cube.x = this.space + cube.width / 2 + (cube.width + this.space) * _j;
         cube.y = this.space + cube.height / 2 + (cube.height + this.space) * _i;
-        cube.parent = this.gameNode_;
 
-        this.cubes[_i][_j] = cube;
+        // cube.parent=this.gameNode_;
+
+        this.cubes[_i][_j] = this.createCube({ row: _i, column: _j });
       }
     }
+  },
+  randLevel: function randLevel() {
+    return this.maxLevel - 2 + parseInt(Math.random() * 10) % (this.maxLevel + 1);
   },
   posToPoint: function posToPoint(pos) {
     var cell = { row: 0, column: 0 };
@@ -81,57 +136,114 @@ var GameManager = cc.Class({
     }
 
     cc.warn("invalid touch position");
-    return position;
+    return cell;
+  },
+  removeCube: function removeCube(cube) {
+    this.gameNode_.emit(cc.Node.EventType.TOUCH_END);
+    cube.removeFromParent();
+    var cubeCom = cube.getComponent("cube");
+    this.cubes[cubeCom.cell.row][cubeCom.cell.column] = null;
+  },
+  playDeadAction: function playDeadAction(pos) {
+    var system = this.gameNode_.getChildByName("particle").getComponent(cc.ParticleSystem);
+    system.resetSystem();
+    system.node.position = pos;
+    // system.active=true;
   },
 
 
-  //dir:-1 or 1
-  getLimitPosition: function getLimitPosition(touchPos, node) {
-    var position = this.posToPoint(touchPos);
-
-    var point = cc.p(0, 0);
-
-    if (!position.row >= this.cubes.length) {
-      cc.error("invalid row count");
+  //移动数组位置到显示位置
+  cubeMoved: function cubeMoved(cube) {
+    cc.log("cube moved");
+    var cell = this.posToPoint(cube.position);
+    if (this.cubes[cell.row][this.column]) {
+      cc.error("can not move cube");
       return;
     }
-    for (var i = 0; i <= position.column; i++) {
-      var cube = this.cubes[position.row][i];
-      if (!cube) {
-        continue;
-      }
-      if (node === cube) {
-        continue;
-      }
-      if (touchPos.x - node.x > 0) {
-        point.x = cube.x - this.space - cube.width;
-        break;
-      } else {
-        point.x = cube.x + this.space + cube.width;
-        break;
-      }
+    var cubeCom = cube.getComponent("cube");
+    var oldCell = cubeCom.cell;
+    if (this.cubes[oldCell.row][oldCell.column] === cube) {
+      //删除旧位置信息
+      this.cubes[oldCell.row][oldCell.column] = null;
     }
+    // else if(this.cubes[oldCell.row][oldCell.column]&&this.cubes[oldCell.row][oldCell.column]!==cube){//当前位置已存在
+    //   if (cell.row>=this.cubes.length-2){
+    //     cc.warn("move to top");
+    //     return;
+    //   }
+    //   cell.row+=1;
+    // }
 
-    for (var _i2 = 0; _i2 <= position.row; _i2++) {
-      var _cube = this.cubes[_i2][position.column];
-      if (!_cube) {
-        continue;
-      }
-      if (node === _cube) {
-        continue;
-      }
-      if (touchPos.y - node.y > 0) {
-        point.y = _cube.y - this.space - _cube.height;
-        break;
-      } else {
-        point.y = _cube.y + this.space + _cube.height;
-        break;
-      }
-    }
-
-    return point;
+    this.cubes[cell.row][cell.column] = cube;
+    cubeCom.setCellPos(cell);
   },
-  update: function update(dt) {}
+  getCube: function getCube(row, column) {
+    return this.cubes[row][column];
+  },
+  levelChange: function levelChange(level) {
+    if (level > this.maxLevel) {
+      this.maxLevel = level;
+    }
+  },
+  update: function update(dt) {
+    // this.checkFallingDownPosition();
+    if (this.isPause) {
+      return;
+    }
+    this.leftTime -= dt;
+    if (this.leftTime <= 0) {
+      this.addNewLine();
+      this.leftTime = this.newLineTime;
+    }
+  },
+  isDead: function isDead() {
+    var topLine = this.cubes[this.cubes.length - 1];
+    for (var i = 0; i < topLine.length; i++) {
+      if (topLine[i]) {
+        return true;
+      }
+    }
+    return false;
+  },
+  addNewLine: function addNewLine() {
+    if (this.isDead()) {
+      this.gameOver();
+      return;
+    }
+    for (var i = 0; i < this.cubes.length; i++) {
+      var row = this.cubes[i];
+      for (var j = 0; j < row.length; j++) {
+        var cube = row[j];
+        if (!cube) {
+          continue;
+        }
+        if (cube.getComponent("cube").state !== _consts.CubeState.Normal) {
+          continue;
+        }
+        cube.emit("move-up");
+        // this.cubes[i][j]=null;
+      }
+    }
+
+    for (var _i2 = 0; _i2 < this.columnCount; _i2++) {
+      this.cubes[0][_i2] = this.createCube({ row: 0, column: _i2 });
+    }
+  },
+  gameOver: function gameOver() {
+    this.isPause = true;
+    this.mainNode.getComponent(cc.Animation).play("game-over");
+  },
+  createCube: function createCube(cell) {
+    var cube = cc.instantiate(this.cubePrefabs[0]);
+    cube.getComponent("cube").init(cell, this.randLevel());
+    cube.x = this.space + cube.width / 2 + (cube.width + this.space) * cell.column;
+    cube.y = this.space + cube.height / 2 + (cube.height + this.space) * cell.row;
+    cube.parent = this.gameNode_;
+    return cube;
+  },
+  playBombSound: function playBombSound() {
+    this.au_.play();
+  }
 }); // Learn cc.Class:
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/class.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/class.html

@@ -13,19 +13,30 @@ var GameManager=cc.Class({
   properties: {
     rowCount: 8,
     columnCount: 7,
-    space: 20,
+    space: 14,
 
     cubes: [],
+    columnPositions:[],
+    rowPositions:[],
     cubeTemplate:cc.Node,
     cubePrefabs:[],
     gameNode_: null,
 
     halfWidth:0,
     halfHeight:0,
+
+    maxLevel:2,
+    leftTime:10,
+    newLineTime:10,
+    isPause:0,
+
+    mainNode:cc.Node,
   },
 
-  init(prefabs) {
+  init(prefabs,mainNode,auSource) {
+    this.mainNode=mainNode;
     this.gameNode_ = cc.find("/Canvas/game-node", cc.director.getRunningScene());
+    this.gameNode_.getChildByName("particle").zIndex=2;
     this.cubePrefabs=prefabs;
 
     this.halfWidth=this.gameNode_.width/2;
@@ -33,8 +44,43 @@ var GameManager=cc.Class({
 
     this.cubeTemplate=cc.instantiate(this.cubePrefabs[0]);
 
-    this.initCubes();
+    this.au_=auSource;
+
+
+    this.reset();
     cc.log("game manager init");
+  },
+
+  restart(){
+    this.reset();
+    this.mainNode.getComponent(cc.Animation).play("game-restart");
+  },
+
+  reset(){
+    this.clear();
+
+    this.isPause=false;
+    this.leftTime=this.newLineTime;
+    this.maxLevel=2;
+    this.initCubes();
+  },
+
+  clear(){
+    this.foreachCubes((item,cell)=>{
+      if (item){
+        item.removeFromParent();
+      }
+    });
+    // this.gameNode_.removeAllChildren(true);
+  },
+
+  foreachCubes(cb){
+    for (let i=0;i<this.cubes.length;i++){
+      let row=this.cubes[i];
+      for (let j=0;j<row.length;j++){
+        cb(row[j],{row:i,column:j});
+      }
+    }
   },
 
   randColorCube(){
@@ -45,29 +91,44 @@ var GameManager=cc.Class({
 
   initCubes() {
     this.cubes=[];
+    //初始化数组
     for (let i=0;i<this.rowCount;i++){
-      this.cubes.push([]);
-      let tmp=[]
+      let tmp=[];
       for (let j=0;j<this.columnCount;j++){
         tmp.push(null);
+        //cube的x坐标
+        if (this.columnPositions.length<this.columnCount){
+          this.columnPositions.push(this.space+this.cubeTemplate.width/2+(this.cubeTemplate.width+this.space)*j);
+        }
+        //cube的y坐标
+        if (this.rowPositions.length<this.rowCount){
+          this.rowPositions.push(this.space+this.cubeTemplate.height/2+(this.cubeTemplate.height+this.space)*j);
+        }
       }
       this.cubes.push(tmp);
     }
-    for (let i = 0; i < 3; i++) {
+
+    //初始化cube
+    for (let i = 0; i < 2; i++) {
       for (let j = 0; j < this.columnCount; j ++) {
         let cube=this.randColorCube();
         if (!cube){
           cc.error("init cube fail");
           return;
         }
-        // cube.getComponent("cube").init();
+        cube.getComponent("cube").init({row:i,column:j},this.randLevel());
         cube.x=this.space+cube.width/2+(cube.width+this.space)*j;
         cube.y=this.space+cube.height/2+(cube.height+this.space)*i;
-        cube.parent=this.gameNode_;
 
-        this.cubes[i][j]=cube;
+        // cube.parent=this.gameNode_;
+
+        this.cubes[i][j]=this.createCube({row:i,column:j});
       }
     }
+  },
+
+  randLevel(){
+    return this.maxLevel-2+parseInt(Math.random()*10)%(this.maxLevel+1);
   },
 
   posToPoint(pos){
@@ -86,59 +147,119 @@ var GameManager=cc.Class({
     }
 
     cc.warn("invalid touch position");
-    return position;
+    return cell;
   },
 
-  //dir:-1 or 1
-  getLimitPosition(touchPos,node){
-    let position=this.posToPoint(touchPos);
+  removeCube(cube){
+    this.gameNode_.emit(cc.Node.EventType.TOUCH_END);
+    cube.removeFromParent();
+    let cubeCom=cube.getComponent("cube");
+    this.cubes[cubeCom.cell.row][cubeCom.cell.column]=null;
 
-    let point=cc.p(0,0);
+  },
 
-    if (!position.row>=this.cubes.length){
-      cc.error("invalid row count");
+  playDeadAction(pos){
+    let system=this.gameNode_.getChildByName("particle").getComponent(cc.ParticleSystem);
+    system.resetSystem();
+    system.node.position=pos;
+    // system.active=true;
+  },
+
+  //移动数组位置到显示位置
+  cubeMoved(cube){
+    cc.log("cube moved");
+    let cell=this.posToPoint(cube.position);
+    if (this.cubes[cell.row][this.column]){
+      cc.error("can not move cube");
       return;
     }
-    for (let i=0;i<=position.column;i++){
-      let cube=this.cubes[position.row][i];
-      if (!cube){
-        continue;
-      }
-      if (node === cube) {
-        continue;
-      }
-      if (touchPos.x-node.x > 0){
-        point.x=cube.x-this.space-cube.width;
-        break;
-      }else{
-        point.x=cube.x+this.space+cube.width;
-        break;
-      }
+    let cubeCom=cube.getComponent("cube");
+    let oldCell=cubeCom.cell;
+    if (this.cubes[oldCell.row][oldCell.column]===cube){  //删除旧位置信息
+      this.cubes[oldCell.row][oldCell.column]=null;
     }
+    // else if(this.cubes[oldCell.row][oldCell.column]&&this.cubes[oldCell.row][oldCell.column]!==cube){//当前位置已存在
+    //   if (cell.row>=this.cubes.length-2){
+    //     cc.warn("move to top");
+    //     return;
+    //   }
+    //   cell.row+=1;
+    // }
 
-    for (let i=0;i<=position.row;i++){
-      let cube=this.cubes[i][position.column];
-      if (!cube){
-        continue;
-      }
-      if (node === cube) {
-        continue;
-      }
-      if (touchPos.y-node.y > 0){
-        point.y=cube.y-this.space-cube.height;
-        break;
-      }else{
-        point.y=cube.y+this.space+cube.height;
-        break;
-      }
+    this.cubes[cell.row][cell.column]=cube;
+    cubeCom.setCellPos(cell);
+  },
+
+  getCube(row,column){
+    return this.cubes[row][column];
+  },
+
+  levelChange(level){
+    if (level>this.maxLevel){
+      this.maxLevel=level;
     }
-
-    return point;
   },
 
   update (dt) {
-    
+    // this.checkFallingDownPosition();
+    if(this.isPause){
+      return;
+    }
+    this.leftTime-=dt;
+    if (this.leftTime<=0){
+      this.addNewLine();
+      this.leftTime=this.newLineTime;
+    }
   },
+  isDead(){
+    let topLine=this.cubes[this.cubes.length-1];
+    for (let i=0;i<topLine.length;i++){
+      if (topLine[i]){
+        return true;
+      }
+    }
+    return false;
+  },
+
+  addNewLine(){
+    if(this.isDead()){
+      this.gameOver();
+      return;
+    }
+    for(let i=0;i<this.cubes.length;i++) {
+      let row=this.cubes[i];
+      for (let j=0;j<row.length;j++) {
+        let cube=row[j];
+        if (!cube){
+          continue;
+        }
+        if (cube.getComponent("cube").state!==CubeState.Normal){
+          continue;
+        }
+        cube.emit("move-up");
+        // this.cubes[i][j]=null;
+      }
+    }
+
+    for (let i=0;i<this.columnCount;i++){
+      this.cubes[0][i]=this.createCube({row:0,column:i});
+    }
+  },
+  gameOver(){
+    this.isPause=true;
+    this.mainNode.getComponent(cc.Animation).play("game-over");
+  },
+  createCube(cell){
+    let cube=cc.instantiate(this.cubePrefabs[0]);
+    cube.getComponent("cube").init(cell,this.randLevel());
+    cube.x=this.space+cube.width/2+(cube.width+this.space)*cell.column;
+    cube.y=this.space+cube.height/2+(cube.height+this.space)*cell.row;
+    cube.parent=this.gameNode_;
+    return cube;
+  },
+  playBombSound(){
+    this.au_.play();
+  }
 });
 
 window.gameManager=new GameManager();

@@ -11,8 +11,11 @@ var CubeColors = cc.Enum({
 var CubeState = cc.Enum({
   Normal: -1,
   Touched: -1,
+  TouchMove: -1,
   FallingDown: -1,
-  Bombing: -1
+  FallingBottom: -1,
+  Bombing: -1,
+  Block: -1
 });
 
 module.exports = {
