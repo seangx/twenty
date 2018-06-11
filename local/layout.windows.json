@@ -7,8 +7,8 @@
       "windowType": "dockable",
       "x": 0,
       "y": 23,
-      "width": 1920,
-      "height": 979,
+      "width": 2048,
+      "height": 1055,
       "layout": {
         "children": [
           {
@@ -18,23 +18,23 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 443,
+                "height": 483,
                 "type": "panel",
-                "width": 204
+                "width": 291
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 442,
+                "height": 478,
                 "type": "panel",
-                "width": 204
+                "width": 291
               }
             ],
-            "height": 888,
+            "height": 964,
             "type": "dock-v",
-            "width": 204
+            "width": 291
           },
           {
             "children": [
@@ -43,33 +43,33 @@
                 "children": [
                   "scene"
                 ],
-                "height": 443,
+                "height": 483,
                 "type": "panel",
-                "width": 1262
+                "width": 1293
               },
               {
-                "active": 1,
+                "active": 0,
                 "children": [
                   "console",
                   "timeline"
                 ],
-                "height": 442,
+                "height": 478,
                 "type": "panel",
-                "width": 1262
+                "width": 1293
               }
             ],
-            "height": 888,
+            "height": 964,
             "type": "dock-v",
-            "width": 1262
+            "width": 1293
           },
           {
             "active": 0,
             "children": [
               "inspector"
             ],
-            "height": 888,
+            "height": 964,
             "type": "panel",
-            "width": 442
+            "width": 452
           }
         ],
         "type": "dock-h"
@@ -82,8 +82,7 @@
         "scene",
         "timeline"
       ]
-    },
-    "window-1527392007425": {}
+    }
   },
   "panels": {
     "project-settings": {
@@ -105,8 +104,8 @@
       "height": 548
     },
     "builder": {
-      "x": 1037,
-      "y": 183,
+      "x": 399,
+      "y": 203,
       "width": 500,
       "height": 722
     }

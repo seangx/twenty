@@ -11,7 +11,7 @@ var GameManager = cc.Class({
   properties: {
     rowCount: 8,
     columnCount: 7,
-    space: 14,
+    space: 15,
 
     cubes: [],
     columnPositions: [],
@@ -23,7 +23,7 @@ var GameManager = cc.Class({
     halfWidth: 0,
     halfHeight: 0,
 
-    maxLevel: 2,
+    maxLevel: 0,
     leftTime: 10,
     newLineTime: 10,
     isPause: 0,
@@ -34,7 +34,6 @@ var GameManager = cc.Class({
   init: function init(prefabs, mainNode, auSource) {
     this.mainNode = mainNode;
     this.gameNode_ = cc.find("/Canvas/game-node", cc.director.getRunningScene());
-    this.gameNode_.getChildByName("particle").zIndex = 2;
     this.cubePrefabs = prefabs;
 
     this.halfWidth = this.gameNode_.width / 2;
@@ -45,6 +44,9 @@ var GameManager = cc.Class({
     this.au_ = auSource;
 
     this.reset();
+    if (this.maxLevel <= 0) {
+      this.showStarDes(this.maxLevel);
+    }
     cc.log("game manager init");
   },
   restart: function restart() {
@@ -56,7 +58,7 @@ var GameManager = cc.Class({
 
     this.isPause = false;
     this.leftTime = this.newLineTime;
-    this.maxLevel = 2;
+    this.maxLevel = 0;
     this.initCubes();
   },
   clear: function clear() {
@@ -118,7 +120,20 @@ var GameManager = cc.Class({
     }
   },
   randLevel: function randLevel() {
-    return this.maxLevel - 2 + parseInt(Math.random() * 10) % (this.maxLevel + 1);
+    // if (this.maxLevel<3){
+    //   return  parseInt(Math.random()*10)%2;
+    // }
+    // if (this.maxLevel<6){
+    //   return parseInt(Math.random()*10)%(this.maxLevel);
+    // }
+    // if (this.maxLevel<11){
+    //   return parseInt(Math.random()*10)%(this.maxLevel-1);
+    // }
+    // return Math.min(5+parseInt(Math.random()*10)%(this.maxLevel-5),14);
+    if (this.maxLevel <= 0) {
+      return this.maxLevel;
+    }
+    return parseInt(Math.random() * 10) % this.maxLevel;
   },
   posToPoint: function posToPoint(pos) {
     var cell = { row: 0, column: 0 };
@@ -143,12 +158,6 @@ var GameManager = cc.Class({
     cube.removeFromParent();
     var cubeCom = cube.getComponent("cube");
     this.cubes[cubeCom.cell.row][cubeCom.cell.column] = null;
-  },
-  playDeadAction: function playDeadAction(pos) {
-    var system = this.gameNode_.getChildByName("particle").getComponent(cc.ParticleSystem);
-    system.resetSystem();
-    system.node.position = pos;
-    // system.active=true;
   },
 
 
@@ -180,9 +189,17 @@ var GameManager = cc.Class({
   getCube: function getCube(row, column) {
     return this.cubes[row][column];
   },
+  setCube: function setCube(row, column, cube) {
+    if (this.cubes[row][column]) {
+      cc.warn("can not set,cell is not nil");
+      return;
+    }
+    this.cubes[row][column] = cube;
+  },
   levelChange: function levelChange(level) {
     if (level > this.maxLevel) {
       this.maxLevel = level;
+      this.showStarDes(this.maxLevel);
     }
   },
   update: function update(dt) {
@@ -210,6 +227,7 @@ var GameManager = cc.Class({
       this.gameOver();
       return;
     }
+    cc.game.emit("add-new-line");
     for (var i = 0; i < this.cubes.length; i++) {
       var row = this.cubes[i];
       for (var j = 0; j < row.length; j++) {
@@ -217,16 +235,19 @@ var GameManager = cc.Class({
         if (!cube) {
           continue;
         }
-        if (cube.getComponent("cube").state !== _consts.CubeState.Normal) {
-          continue;
-        }
+        // if (cube.getComponent("cube").state!==CubeState.Normal){
+        //   continue;
+        // }
         cube.emit("move-up");
         // this.cubes[i][j]=null;
       }
     }
 
     for (var _i2 = 0; _i2 < this.columnCount; _i2++) {
-      this.cubes[0][_i2] = this.createCube({ row: 0, column: _i2 });
+      var _cube = this.createCube({ row: 0, column: _i2 });
+      _cube.y = -_cube.height / 2;
+      this.cubes[0][_i2] = _cube;
+      // cube.emit("move-up");
     }
   },
   gameOver: function gameOver() {
@@ -243,6 +264,24 @@ var GameManager = cc.Class({
   },
   playBombSound: function playBombSound() {
     this.au_.play();
+  },
+  showStarDes: function showStarDes(index) {
+    var node = cc.find("star-description");
+    if (!node) {
+      cc.warn("star-description is not find");
+      return;
+    }
+    node.getComponent(node.name).init(index);
+    node.active = true;
+  },
+  hideStarDes: function hideStarDes(index) {
+    var node = cc.find("star-description");
+    if (!node) {
+      cc.warn("star-description is not find");
+      return;
+    }
+    // node.getComponent(node.name).init(index);
+    node.active = false;
   }
 }); // Learn cc.Class:
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/class.html

@@ -13,7 +13,7 @@ var GameManager=cc.Class({
   properties: {
     rowCount: 8,
     columnCount: 7,
-    space: 14,
+    space: 15,
 
     cubes: [],
     columnPositions:[],
@@ -25,7 +25,7 @@ var GameManager=cc.Class({
     halfWidth:0,
     halfHeight:0,
 
-    maxLevel:2,
+    maxLevel:0,
     leftTime:10,
     newLineTime:10,
     isPause:0,
@@ -36,7 +36,6 @@ var GameManager=cc.Class({
   init(prefabs,mainNode,auSource) {
     this.mainNode=mainNode;
     this.gameNode_ = cc.find("/Canvas/game-node", cc.director.getRunningScene());
-    this.gameNode_.getChildByName("particle").zIndex=2;
     this.cubePrefabs=prefabs;
 
     this.halfWidth=this.gameNode_.width/2;
@@ -46,8 +45,10 @@ var GameManager=cc.Class({
 
     this.au_=auSource;
 
-
     this.reset();
+    if (this.maxLevel<=0){
+      this.showStarDes(this.maxLevel);
+    }
     cc.log("game manager init");
   },
 
@@ -61,7 +62,7 @@ var GameManager=cc.Class({
 
     this.isPause=false;
     this.leftTime=this.newLineTime;
-    this.maxLevel=2;
+    this.maxLevel=0;
     this.initCubes();
   },
 
@@ -128,7 +129,20 @@ var GameManager=cc.Class({
   },
 
   randLevel(){
-    return this.maxLevel-2+parseInt(Math.random()*10)%(this.maxLevel+1);
+    // if (this.maxLevel<3){
+    //   return  parseInt(Math.random()*10)%2;
+    // }
+    // if (this.maxLevel<6){
+    //   return parseInt(Math.random()*10)%(this.maxLevel);
+    // }
+    // if (this.maxLevel<11){
+    //   return parseInt(Math.random()*10)%(this.maxLevel-1);
+    // }
+    // return Math.min(5+parseInt(Math.random()*10)%(this.maxLevel-5),14);
+    if (this.maxLevel<=0){
+      return this.maxLevel;
+    }
+    return parseInt(Math.random()*10)%this.maxLevel;
   },
 
   posToPoint(pos){
@@ -156,13 +170,6 @@ var GameManager=cc.Class({
     let cubeCom=cube.getComponent("cube");
     this.cubes[cubeCom.cell.row][cubeCom.cell.column]=null;
 
-  },
-
-  playDeadAction(pos){
-    let system=this.gameNode_.getChildByName("particle").getComponent(cc.ParticleSystem);
-    system.resetSystem();
-    system.node.position=pos;
-    // system.active=true;
   },
 
   //移动数组位置到显示位置
@@ -194,9 +201,18 @@ var GameManager=cc.Class({
     return this.cubes[row][column];
   },
 
+  setCube(row,column,cube){
+    if (this.cubes[row][column]){
+      cc.warn("can not set,cell is not nil");
+      return;
+    }
+    this.cubes[row][column]=cube;
+  },
+
   levelChange(level){
     if (level>this.maxLevel){
       this.maxLevel=level;
+      this.showStarDes(this.maxLevel);
     }
   },
 
@@ -211,6 +227,7 @@ var GameManager=cc.Class({
       this.leftTime=this.newLineTime;
     }
   },
+
   isDead(){
     let topLine=this.cubes[this.cubes.length-1];
     for (let i=0;i<topLine.length;i++){
@@ -226,6 +243,7 @@ var GameManager=cc.Class({
       this.gameOver();
       return;
     }
+    cc.game.emit("add-new-line");
     for(let i=0;i<this.cubes.length;i++) {
       let row=this.cubes[i];
       for (let j=0;j<row.length;j++) {
@@ -233,16 +251,19 @@ var GameManager=cc.Class({
         if (!cube){
           continue;
         }
-        if (cube.getComponent("cube").state!==CubeState.Normal){
-          continue;
-        }
+        // if (cube.getComponent("cube").state!==CubeState.Normal){
+        //   continue;
+        // }
         cube.emit("move-up");
         // this.cubes[i][j]=null;
       }
     }
 
     for (let i=0;i<this.columnCount;i++){
-      this.cubes[0][i]=this.createCube({row:0,column:i});
+      let cube=this.createCube({row:0,column:i});
+      cube.y=-cube.height/2;
+      this.cubes[0][i]=cube;
+      // cube.emit("move-up");
     }
   },
   gameOver(){
@@ -259,6 +280,25 @@ var GameManager=cc.Class({
   },
   playBombSound(){
     this.au_.play();
+  },
+
+  showStarDes(index){
+    let node=cc.find("star-description");
+    if (!node){
+      cc.warn("star-description is not find");
+      return;
+    }
+    node.getComponent(node.name).init(index);
+    node.active=true;
+  },
+  hideStarDes(index){
+    let node=cc.find("star-description");
+    if (!node){
+      cc.warn("star-description is not find");
+      return;
+    }
+    // node.getComponent(node.name).init(index);
+    node.active=false;
   }
 });
 

@@ -18,9 +18,21 @@ var CubeState = cc.Enum({
   Block: -1
 });
 
+var StarNames = cc.Enum({
+  "Neptune": -1,
+  "Uranus": -1,
+  "Saturn": -1,
+  "Jupiter": -1,
+  "Mars": -1,
+  "Earth": -1,
+  "Venus": -1,
+  "Mercury": -1
+});
+
 module.exports = {
   CubeColors: CubeColors,
-  CubeState: CubeState
+  CubeState: CubeState,
+  StarNames: StarNames
 };
 
 cc._RF.pop();

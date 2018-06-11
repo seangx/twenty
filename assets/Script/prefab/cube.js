@@ -21,6 +21,7 @@ cc.Class({
     cell:cc.p(0,0),
     levelFrames:[cc.SpriteFrame],
     background:cc.Sprite,
+    levelUpAnimation:cc.Prefab
   },
 
   // LIFE-CYCLE CALLBACKS:
@@ -36,7 +37,19 @@ cc.Class({
 
     this.node.on("move-up",this.onMoveUp,this);
 
+    cc.game.on("add-new-line",()=>{
+      if (!this.isTouched()||this.cell.row>0){
+        return;
+      }
+      let moveTo=cc.moveTo(0.2,cc.pAdd(this.node.position,cc.p(0,this.node.height+gameManager.space)));
+      this.node.runAction(moveTo);
+    });
+
     this.touchStartPos=cc.p(0,0);
+  },
+
+  isTouched(){
+    return this.state===CubeState.Touched||this.state===CubeState.TouchMove;
   },
 
   // destroy(){
@@ -47,15 +60,17 @@ cc.Class({
     this.level++;
     gameManager.levelChange(this.level);
     this.safeChangeLevelFrame();
-    gameManager.playDeadAction(this.node.position);
+    // gameManager.playDeadAction(this.node.position);
+    this.playLevelUpAnimation();
     gameManager.playBombSound();
   },
 
   safeChangeLevelFrame(){
-    if (this.level>=this.levelFrames.length){
-      this.level=this.levelFrames.length-1;
-    }
-    this.background.spriteFrame=this.levelFrames[this.level];
+    cc.log("safe change sprite frame,level:",this.level.toString());
+    // if (this.level>=this.levelFrames.length){
+    //   this.level=this.levelFrames.length-1;
+    // }
+    this.background.spriteFrame=this.levelFrames[Math.min(this.level,this.levelFrames.length-1)];
   },
 
   init(cell,level) {
@@ -85,6 +100,7 @@ cc.Class({
     }
     switch (state){
       case CubeState.Normal:{
+        this.disablePhysics();
         gameManager.cubeMoved(this.node);
         break;
       }
@@ -110,10 +126,11 @@ cc.Class({
         break;
       }
       case CubeState.TouchMove:{
+        this.fitCell();
         break;
       }
       case CubeState.Normal:{
-        this.disablePhysics();
+        // this.disablePhysics();
         this.checkFallingDown();
         break;
       }
@@ -168,6 +185,14 @@ cc.Class({
     }
   },
 
+  fitCell(){
+    let newCell=gameManager.posToPoint(this.node.position);
+    if (newCell.row!==this.cell.row||newCell.column!==this.cell.column){
+      gameManager.cubeMoved(this.node);
+
+    }
+  },
+
   checkBombing(cube1,cube2){
     if (cube1.level !== cube2.level) {
       return false;
@@ -204,19 +229,7 @@ cc.Class({
       cubeSelf.setState(CubeState.FallingBottom);
     }
   },
-  // 每次处理完碰撞体接触逻辑时被调用
-  onPostSolve: function (contact, selfCollider, otherCollider) {
-    if (selfCollider.body.type===cc.RigidBodyType.Static){
-      return;
-    }
-  },
 
-  // 每次处理完碰撞体接触逻辑时被调用
-  onPostSolve: function (contact, selfCollider, otherCollider) {
-    if (selfCollider.body.type===cc.RigidBodyType.Static){
-      return;
-    }
-  },
   resetY(){
     //更新cube的y坐标
     cc.log("reset y called");
@@ -253,12 +266,24 @@ cc.Class({
       this.setState(CubeState.FallingDown);
     }
   },
+
   onMoveUp(){
+    if (this.state===CubeState.Touched||this.state===CubeState.TouchMove){
+      return;
+    }
     this.setState(CubeState.Block);
     let moveTo=cc.moveTo(0.2,cc.pAdd(this.node.position,cc.p(0,this.node.height+gameManager.space)));
     this.node.runAction(cc.sequence(moveTo,cc.callFunc(()=>{
       gameManager.cubeMoved(this.node);
       this.setState(CubeState.Normal);
     })));
+  },
+
+  playLevelUpAnimation(){
+    if (!this.levelUpAnimation){
+      return;
+    }
+    let ani=cc.instantiate(this.levelUpAnimation);
+    this.node.addChild(ani);
   },
 });
