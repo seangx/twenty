@@ -6,18 +6,35 @@ cc._RF.push(module, '1b9f60mB+5KE6yDSXu44Fvy', 'cube');
 
 var _consts = require("../consts");
 
+var _star = require("./star.js");
+
+var _star2 = _interopRequireDefault(_star);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Learn cc.Class:
+//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/class.html
+//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/class.html
+// Learn Attribute:
+//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/reference/attributes.html
+//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/reference/attributes.html
+// Learn life-cycle callbacks:
+//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
+//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
+// import {CubeState} from './color-cube';
 cc.Class({
   extends: cc.Component,
 
   properties: {
-    level: 0,
     state: {
       default: _consts.CubeState.Normal,
       type: _consts.CubeState
     },
     cell: cc.p(0, 0),
-    levelFrames: [cc.SpriteFrame],
-    background: cc.Sprite,
+    star: {
+      default: null,
+      type: _star2.default
+    },
     levelUpAnimation: cc.Prefab
   },
 
@@ -56,25 +73,15 @@ cc.Class({
   // },
 
   onLevelUp: function onLevelUp() {
-    this.level++;
-    gameManager.levelChange(this.level);
-    this.safeChangeLevelFrame();
+    this.star.levelUp();
+    gameManager.levelChange(this.star.starType);
     // gameManager.playDeadAction(this.node.position);
     this.playLevelUpAnimation();
     gameManager.playBombSound();
   },
-  safeChangeLevelFrame: function safeChangeLevelFrame() {
-    cc.log("safe change sprite frame,level:", this.level.toString());
-    // if (this.level>=this.levelFrames.length){
-    //   this.level=this.levelFrames.length-1;
-    // }
-    this.background.spriteFrame = this.levelFrames[Math.min(this.level, this.levelFrames.length - 1)];
-  },
-  init: function init(cell, level) {
+  init: function init(cell, starType) {
     this.cell = cell;
-    this.level = level;
-    // this.
-    this.safeChangeLevelFrame();
+    this.star.setStarType(starType);
     // this.setState(CubeState.Block);
   },
   start: function start() {},
@@ -82,7 +89,7 @@ cc.Class({
     this.cell = cell;
   },
   setState: function setState(state) {
-    cc.log(cc.js.formatStr("set state,old:%d,new:%d,pos:%v", this.state, state, this.cell));
+    cc.log(cc.js.formatStr("set state,old:%d,new:%d,pos:%s", this.state, state, JSON.stringify(this.cell)));
     if (this.state === _consts.CubeState.Bombing) {
       cc.error("cube is marking dead");
       return;
@@ -119,7 +126,7 @@ cc.Class({
       case _consts.CubeState.Bombing:
         {
           gameManager.removeCube(this.node);
-          break;
+          return;
         }
       case _consts.CubeState.TouchMove:
         {
@@ -186,7 +193,7 @@ cc.Class({
     }
   },
   checkBombing: function checkBombing(cube1, cube2) {
-    if (cube1.level !== cube2.level) {
+    if (cube1.star.starType !== cube2.star.starType) {
       return false;
     }
 
@@ -203,7 +210,7 @@ cc.Class({
 
   //仅动态类型才处理碰撞
   onBeginContact: function onBeginContact(contact, selfCollider, otherCollider) {
-    if (selfCollider.body.type === cc.RigidBodyType.Static) {
+    if (selfCollider.body.type === cc.RigidBodyType.Static || gameManager.state === _consts.GameState.AddNewLine) {
       return;
     }
 
@@ -248,7 +255,7 @@ cc.Class({
     }
   },
   checkFallingDown: function checkFallingDown() {
-    if (this.cell.row <= 0) {
+    if (this.cell.row <= 0 || gameManager.state !== _consts.GameState.Running) {
       return;
     }
     var downCube = gameManager.getCube(this.cell.row - 1, this.cell.column);
@@ -276,15 +283,6 @@ cc.Class({
     var ani = cc.instantiate(this.levelUpAnimation);
     this.node.addChild(ani);
   }
-}); // Learn cc.Class:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/class.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/class.html
-// Learn Attribute:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/reference/attributes.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
-// import {CubeState} from './color-cube';
+});
 
 cc._RF.pop();

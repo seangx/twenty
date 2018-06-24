@@ -73,11 +73,11 @@
     "_enabled": true,
     "_paused": false,
     "defaultSkin": "",
-    "defaultAnimation": "bomb",
+    "defaultAnimation": "animation",
     "loop": true,
-    "_premultipliedAlpha": true,
+    "_premultipliedAlpha": false,
     "_N$skeletonData": {
-      "__uuid__": "0a7e7c45-8e05-487b-a232-567e506315c7"
+      "__uuid__": "589d6743-5913-4d7f-9605-5a6707103594"
     },
     "_N$timeScale": 1,
     "_N$debugSlots": false,

@@ -1,0 +1,45 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "show-new-star-tip",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 1.5,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "top/tip-new-star": {
+        "props": {
+          "y": [
+            {
+              "frame": 0,
+              "value": 485
+            },
+            {
+              "frame": 0.13333333333333333,
+              "value": -80
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": -60
+            },
+            {
+              "frame": 1.1833333333333333,
+              "value": -60
+            },
+            {
+              "frame": 1.2166666666666666,
+              "value": -80
+            },
+            {
+              "frame": 1.5,
+              "value": 485
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

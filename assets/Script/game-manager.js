@@ -7,13 +7,14 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
-import {CubeState,CubeColors} from "consts";
+import {CubeState,CubeColors,GameState} from "consts";
+import Platform from "./platform/platform";
 var GameManager=cc.Class({
 
   properties: {
     rowCount: 8,
     columnCount: 7,
-    space: 15,
+    space: 5,
 
     cubes: [],
     columnPositions:[],
@@ -26,30 +27,55 @@ var GameManager=cc.Class({
     halfHeight:0,
 
     maxLevel:0,
+    maxHistory:0,
     leftTime:10,
     newLineTime:10,
-    isPause:0,
 
     mainNode:cc.Node,
+
+    state:{
+      default:GameState.Idle,
+      type:GameState,
+    }
+  },
+
+  setState(state){
+    if(this.state===state){
+      return;
+    }
+    this.state=state;
   },
 
   init(prefabs,mainNode,auSource) {
-    this.mainNode=mainNode;
-    this.gameNode_ = cc.find("/Canvas/game-node", cc.director.getRunningScene());
-    this.cubePrefabs=prefabs;
+    Platform.instance.getStorage("maxLevel",function(maxLevel){
+      this.mainNode=mainNode;
+      this.gameNode_ = mainNode.getChildByName("game-node");
+      this.cubePrefabs=prefabs;
 
-    this.halfWidth=this.gameNode_.width/2;
-    this.halfHeight=this.gameNode_.height/2;
+      this.halfWidth=this.gameNode_.width/2;
+      this.halfHeight=this.gameNode_.height/2;
 
-    this.cubeTemplate=cc.instantiate(this.cubePrefabs[0]);
+      this.cubeTemplate=cc.instantiate(this.cubePrefabs[0]);
 
-    this.au_=auSource;
+      this.au_=auSource;
 
-    this.reset();
-    if (this.maxLevel<=0){
-      this.showStarDes(this.maxLevel);
-    }
-    cc.log("game manager init");
+      this.reset();
+      this.maxLevel=0;
+      if (maxLevel){
+        this.maxHistory=parseInt(maxLevel);
+      }
+
+      if (this.maxLevel<=0){
+        this.showStarDes(this.maxLevel);
+      }
+
+      Platform.instance.onHide(()=>{
+        this.setState(GameState.Pause);
+      });
+
+      cc.log("game manager init");
+    }.bind(this));
+
   },
 
   restart(){
@@ -60,7 +86,7 @@ var GameManager=cc.Class({
   reset(){
     this.clear();
 
-    this.isPause=false;
+    this.setState(GameState.Running);
     this.leftTime=this.newLineTime;
     this.maxLevel=0;
     this.initCubes();
@@ -168,6 +194,7 @@ var GameManager=cc.Class({
     this.gameNode_.emit(cc.Node.EventType.TOUCH_END);
     cube.removeFromParent();
     let cubeCom=cube.getComponent("cube");
+
     this.cubes[cubeCom.cell.row][cubeCom.cell.column]=null;
 
   },
@@ -213,12 +240,30 @@ var GameManager=cc.Class({
     if (level>this.maxLevel){
       this.maxLevel=level;
       this.showStarDes(this.maxLevel);
+      if (this.maxLevel>this.maxHistory){
+        this.maxHistory=this.maxLevel;
+        Platform.instance.setStorage("maxLevel",this.maxLevel.toString());
+        Platform.instance.submitScore(dataManager.userInfo.userId3,this.maxLevel);
+      }
+      cc.game.emit("max-level-changed");
+    }
+  },
+
+  savePlayerData(){
+    if (cc.sys.platform === cc.sys.WECHAT_GAME){
+      wx.setStorage({
+        key:"maxLevel",
+        data:this.maxLevel.toString(),
+        success:()=>{
+          console.log("save level success");
+        }
+      })
     }
   },
 
   update (dt) {
     // this.checkFallingDownPosition();
-    if(this.isPause){
+    if(this.state!==GameState.Running){
       return;
     }
     this.leftTime-=dt;
@@ -243,6 +288,7 @@ var GameManager=cc.Class({
       this.gameOver();
       return;
     }
+    this.setState(GameState.AddNewLine);
     cc.game.emit("add-new-line");
     for(let i=0;i<this.cubes.length;i++) {
       let row=this.cubes[i];
@@ -259,23 +305,31 @@ var GameManager=cc.Class({
       }
     }
 
-    for (let i=0;i<this.columnCount;i++){
-      let cube=this.createCube({row:0,column:i});
-      cube.y=-cube.height/2;
-      this.cubes[0][i]=cube;
-      // cube.emit("move-up");
-    }
+    //避免新旧碰撞，延迟加载新0星球
+    setTimeout(()=>{
+      if (this.state!=GameState.AddNewLine){
+        return;
+      }
+      this.setState(GameState.Running);
+      for (let i=0;i<this.columnCount;i++){
+        let cube=this.createCube({row:0,column:i});
+        // cube.y=-cube.height/2;
+        this.cubes[0][i]=cube;
+        // cube.emit("move-up");
+      }
+    },150);
   },
   gameOver(){
-    this.isPause=true;
+    this.setState(GameState.Over);
+    cc.game.emit("game-over");
     this.mainNode.getComponent(cc.Animation).play("game-over");
   },
   createCube(cell){
     let cube=cc.instantiate(this.cubePrefabs[0]);
-    cube.getComponent("cube").init(cell,this.randLevel());
     cube.x=this.space+cube.width/2+(cube.width+this.space)*cell.column;
     cube.y=this.space+cube.height/2+(cube.height+this.space)*cell.row;
     cube.parent=this.gameNode_;
+    cube.getComponent("cube").init(cell,this.randLevel());
     return cube;
   },
   playBombSound(){
@@ -283,23 +337,25 @@ var GameManager=cc.Class({
   },
 
   showStarDes(index){
-    let node=cc.find("star-description");
-    if (!node){
-      cc.warn("star-description is not find");
-      return;
-    }
-    node.getComponent(node.name).init(index);
-    node.active=true;
-  },
-  hideStarDes(index){
-    let node=cc.find("star-description");
-    if (!node){
-      cc.warn("star-description is not find");
-      return;
-    }
+    // let node=cc.find("star-description");
+    // if (!node){
+    //   cc.warn("star-description is not find");
+    //   return;
+    // }
+    //
     // node.getComponent(node.name).init(index);
-    node.active=false;
-  }
+    // node.active=true;
+  },
+
+  hideStarDes(index){
+    // let node=cc.find("star-description");
+    // if (!node){
+    //   cc.warn("star-description is not find");
+    //   return;
+    // }
+    // // node.getComponent(node.name).init(index);
+    // node.active=false;
+  },
 });
 
 window.gameManager=new GameManager();

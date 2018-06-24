@@ -1,304 +1,2718 @@
-2018-06-10T00:43:41.844Z - normal: Load ~/.CocosCreator/settings.json
-2018-06-10T00:43:41.847Z - normal: checking language setting...
-2018-06-10T00:43:41.847Z - normal: Language: zh
-2018-06-10T00:43:42.673Z - success: protocol editor-framework registered
-2018-06-10T00:43:42.673Z - success: protocol app registered
-2018-06-10T00:43:42.673Z - success: protocol theme registered
-2018-06-10T00:43:42.674Z - success: protocol packages registered
-2018-06-10T00:43:42.674Z - success: protocol unpack registerred
-2018-06-10T00:43:42.674Z - success: protocol disable-commonjs registerred
-2018-06-10T00:43:42.791Z - normal: connected!
-2018-06-10T00:43:42.793Z - normal: Check project /Users/workspace/twenty
-2018-06-10T00:43:42.795Z - normal: Initializing Cocos2d
-2018-06-10T00:43:43.031Z - normal: Initializing Asset Database
-2018-06-10T00:43:43.065Z - success: protocol uuid registerred
-2018-06-10T00:43:43.065Z - success: protocol db registerred
-2018-06-10T00:43:43.066Z - success: protocol thumbnail registerred
-2018-06-10T00:43:43.066Z - normal: Loading editor/builtin packages
-2018-06-10T00:43:43.094Z - success: anysdk loaded
-2018-06-10T00:43:43.221Z - success: assets loaded
-2018-06-10T00:43:43.225Z - success: builder loaded
-2018-06-10T00:43:43.228Z - success: cocos-analytics loaded
-2018-06-10T00:43:43.232Z - success: console loaded
-2018-06-10T00:43:43.263Z - success: fb-instant-games loaded
-2018-06-10T00:43:43.268Z - success: hierarchy loaded
-2018-06-10T00:43:43.273Z - success: inspector loaded
-2018-06-10T00:43:43.274Z - success: keystore loaded
-2018-06-10T00:43:43.283Z - success: node-library loaded
-2018-06-10T00:43:43.285Z - success: package-asset loaded
-2018-06-10T00:43:43.287Z - success: preferences loaded
-2018-06-10T00:43:43.290Z - success: project-exporter loaded
-2018-06-10T00:43:43.306Z - success: project-importer loaded
-2018-06-10T00:43:43.309Z - success: project-settings loaded
-2018-06-10T00:43:43.313Z - success: ui-kit loaded
-2018-06-10T00:43:43.318Z - success: ui-grid loaded
-2018-06-10T00:43:43.323Z - success: scene loaded
-2018-06-10T00:43:43.325Z - success: sprite-editor loaded
-2018-06-10T00:43:43.329Z - success: store loaded
-2018-06-10T00:43:43.335Z - success: timeline loaded
-2018-06-10T00:43:43.335Z - normal: Loading builtin packages
-2018-06-10T00:43:43.339Z - success: asset-db-debugger loaded
-2018-06-10T00:43:43.340Z - success: color-picker loaded
-2018-06-10T00:43:43.344Z - success: package-manager loaded
-2018-06-10T00:43:43.352Z - success: sdkbox loaded
-2018-06-10T00:43:43.357Z - success: tester loaded
-2018-06-10T00:43:43.360Z - success: ui-kit-preview-extra loaded
-2018-06-10T00:43:43.363Z - success: ui-kit-preview loaded
-2018-06-10T00:43:43.366Z - success: ui-tree loaded
-2018-06-10T00:43:44.457Z - normal: Initializing project /Users/workspace/twenty
-2018-06-10T00:43:44.459Z - normal: Loading packages
-2018-06-10T00:43:44.464Z - normal: Watching packages
-2018-06-10T00:43:44.473Z - normal: Run Application
-2018-06-10T00:43:45.051Z - success: preview server running at http://localhost:7456
-2018-06-10T00:43:49.527Z - normal: 1.6.0
-2018-06-10T00:43:50.001Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T01:40:04.843Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T01:42:44.509Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T01:42:56.540Z - error: TypeError: Cannot read property 'node' of null
+2018-06-24T07:30:04.956Z - normal: Load ~/.CocosCreator/settings.json
+2018-06-24T07:30:04.959Z - normal: checking language setting...
+2018-06-24T07:30:04.960Z - normal: Language: zh
+2018-06-24T07:30:05.919Z - success: protocol editor-framework registered
+2018-06-24T07:30:05.920Z - success: protocol app registered
+2018-06-24T07:30:05.920Z - success: protocol theme registered
+2018-06-24T07:30:05.920Z - success: protocol packages registered
+2018-06-24T07:30:05.920Z - success: protocol unpack registerred
+2018-06-24T07:30:05.920Z - success: protocol disable-commonjs registerred
+2018-06-24T07:30:06.052Z - normal: connected!
+2018-06-24T07:30:06.053Z - normal: Check project /Users/workspace/crazy-games/twenty
+2018-06-24T07:30:06.055Z - normal: Initializing Cocos2d
+2018-06-24T07:30:06.325Z - normal: Initializing Asset Database
+2018-06-24T07:30:06.371Z - success: protocol uuid registerred
+2018-06-24T07:30:06.371Z - success: protocol db registerred
+2018-06-24T07:30:06.371Z - success: protocol thumbnail registerred
+2018-06-24T07:30:06.372Z - normal: Loading editor/builtin packages
+2018-06-24T07:30:06.397Z - success: anysdk loaded
+2018-06-24T07:30:06.572Z - success: assets loaded
+2018-06-24T07:30:06.580Z - success: builder loaded
+2018-06-24T07:30:06.583Z - success: cocos-analytics loaded
+2018-06-24T07:30:06.588Z - success: console loaded
+2018-06-24T07:30:06.638Z - success: fb-instant-games loaded
+2018-06-24T07:30:06.643Z - success: hierarchy loaded
+2018-06-24T07:30:06.649Z - success: inspector loaded
+2018-06-24T07:30:06.651Z - success: keystore loaded
+2018-06-24T07:30:06.661Z - success: node-library loaded
+2018-06-24T07:30:06.664Z - success: package-asset loaded
+2018-06-24T07:30:06.666Z - success: preferences loaded
+2018-06-24T07:30:06.670Z - success: project-exporter loaded
+2018-06-24T07:30:06.692Z - success: project-importer loaded
+2018-06-24T07:30:06.698Z - success: project-settings loaded
+2018-06-24T07:30:06.704Z - success: ui-kit loaded
+2018-06-24T07:30:06.710Z - success: ui-grid loaded
+2018-06-24T07:30:06.716Z - success: scene loaded
+2018-06-24T07:30:06.718Z - success: sprite-editor loaded
+2018-06-24T07:30:06.723Z - success: store loaded
+2018-06-24T07:30:06.733Z - success: timeline loaded
+2018-06-24T07:30:06.733Z - normal: Loading builtin packages
+2018-06-24T07:30:06.739Z - success: asset-db-debugger loaded
+2018-06-24T07:30:06.740Z - success: color-picker loaded
+2018-06-24T07:30:06.744Z - success: package-manager loaded
+2018-06-24T07:30:06.752Z - success: sdkbox loaded
+2018-06-24T07:30:06.759Z - success: tester loaded
+2018-06-24T07:30:06.765Z - success: ui-kit-preview-extra loaded
+2018-06-24T07:30:06.770Z - success: ui-kit-preview loaded
+2018-06-24T07:30:06.774Z - success: ui-tree loaded
+2018-06-24T07:30:08.173Z - normal: Initializing project /Users/workspace/crazy-games/twenty
+2018-06-24T07:30:08.177Z - normal: Loading packages
+2018-06-24T07:30:08.183Z - normal: Watching packages
+2018-06-24T07:30:08.198Z - normal: Run Application
+2018-06-24T07:30:09.067Z - success: preview server running at http://localhost:7456
+2018-06-24T07:30:17.414Z - normal: 1.6.0
+2018-06-24T07:30:19.159Z - warn: The Asset used by component "cc.Sprite" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/bg"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+
+2018-06-24T07:30:19.166Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T07:30:19.169Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T07:30:19.192Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T07:30:19.194Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T07:33:49.997Z - error: TypeError: Cannot read property 'node' of null
     at initializer.parent (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:1156:19)
     at HTMLImageElement.img.onload (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:3508:22)
-2018-06-10T01:42:56.541Z - error: TypeError: Cannot read property 'node' of null
+2018-06-24T07:33:50.286Z - warn: The Asset used by component "cc.Sprite" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/bg"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+
+2018-06-24T07:33:50.290Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T07:33:50.290Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T07:33:50.292Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T07:33:50.292Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T07:35:23.346Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:6507
+2018-06-24T12:35:56.202Z - failed: [db-task][sync-changes] Failed to import asset /Users/workspace/crazy-games/twenty/assets/Script/main.js, message: Compile error: SyntaxError: /Users/workspace/crazy-games/twenty/assets/Script/main.js: Unexpected token (122:2)
+  120 |   onShareClicked(){
+  121 |     Platform.instance.
+> 122 |   }
+      |   ^
+  123 | });
+  124 | 
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1761:8)
+    at Parser.pp$3.parseIdentifier (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4332:10)
+    at Parser.pp$3.parseSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3517:30)
+    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3504:15)
+    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3306:19)
+2018-06-24T13:04:02.196Z - warn: The Asset used by component "cc.Sprite" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/bg"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+
+2018-06-24T13:04:02.197Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:04:02.198Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:04:02.198Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:04:02.198Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:07:10.590Z - warn: The Asset used by component "cc.Sprite" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/bg"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+
+2018-06-24T13:07:10.592Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:07:10.593Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:07:10.593Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:07:10.595Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:07:17.667Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T13:07:17.674Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T13:07:17.674Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T13:07:18.447Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T13:08:01.610Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:193073
+2018-06-24T13:08:01.612Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:193076
+2018-06-24T13:08:01.613Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:193079
+2018-06-24T13:08:01.613Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:193081
+2018-06-24T13:08:01.613Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:193083
+2018-06-24T13:08:04.528Z - normal: Compiled project javascript file successfully
+2018-06-24T13:08:04.529Z - normal: Start building assets
+2018-06-24T13:08:04.529Z - normal: Start spawn build-worker
+2018-06-24T13:08:05.154Z - normal: Finish spawn build-worker
+2018-06-24T13:08:05.154Z - normal: Start init build-worker
+2018-06-24T13:08:07.289Z - normal: 1.6.0
+2018-06-24T13:08:07.419Z - normal: Finish init build-worker
+2018-06-24T13:08:07.419Z - normal: Start build-assets in worker
+2018-06-24T13:08:07.638Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T13:08:07.764Z - warn: The referenced asset used in "db://assets/SDK/Prefabs/end.prefab" is not found, it may have been deleted. Detailed information:
+Node path: "end/bg"
+Used in Component: "cc.Sprite"
+uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+2018-06-24T13:08:07.765Z - warn: The referenced asset used in "db://assets/SDK/Prefabs/end.prefab" is not found, it may have been deleted. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Used in Component: "cc.Label"
+uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+2018-06-24T13:08:07.958Z - normal: Finish build-assets in worker
+2018-06-24T13:08:07.967Z - normal: Finish building assets
+2018-06-24T13:08:07.989Z - normal: Start building raw assets
+2018-06-24T13:08:07.991Z - normal: Start building plugin scripts
+2018-06-24T13:08:08.085Z - normal: Finish building raw assets
+2018-06-24T13:08:08.091Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T13:08:08.168Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T13:09:22.403Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T13:09:22.404Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T13:09:22.793Z - normal: Initializing...
+
+2018-06-24T13:09:22.800Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T13:09:22.816Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T13:09:22.816Z - normal: initialization finished
+
+2018-06-24T13:09:22.996Z - normal: open IDE success
+
+2018-06-24T13:24:29.885Z - warn: The Asset used by component "cc.Sprite" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/bg"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+
+2018-06-24T13:24:29.889Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:24:29.889Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:24:29.890Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:24:29.890Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:26:02.391Z - warn: The Asset used by component "cc.Sprite" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/bg"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+
+2018-06-24T13:26:02.394Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:26:02.395Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:26:02.396Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:26:02.396Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:26:07.102Z - warn: The Asset used by component "cc.Sprite" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/bg"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+
+2018-06-24T13:26:07.103Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:26:07.103Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:26:07.104Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:26:07.104Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:29:41.386Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T13:29:41.394Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T13:29:41.395Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T13:29:41.395Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T13:29:44.908Z - normal: Compiled project javascript file successfully
+2018-06-24T13:29:44.908Z - normal: Start building assets
+2018-06-24T13:29:44.909Z - normal: Start spawn build-worker
+2018-06-24T13:29:45.736Z - normal: Finish spawn build-worker
+2018-06-24T13:29:45.737Z - normal: Start init build-worker
+2018-06-24T13:29:48.493Z - normal: 1.6.0
+2018-06-24T13:29:48.761Z - normal: Finish init build-worker
+2018-06-24T13:29:48.761Z - normal: Start build-assets in worker
+2018-06-24T13:29:49.082Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T13:29:49.288Z - warn: The referenced asset used in "db://assets/SDK/Prefabs/end.prefab" is not found, it may have been deleted. Detailed information:
+Node path: "end/bg"
+Used in Component: "cc.Sprite"
+uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+2018-06-24T13:29:49.289Z - warn: The referenced asset used in "db://assets/SDK/Prefabs/end.prefab" is not found, it may have been deleted. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Used in Component: "cc.Label"
+uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+2018-06-24T13:29:49.575Z - normal: Finish build-assets in worker
+2018-06-24T13:29:49.588Z - normal: Finish building assets
+2018-06-24T13:29:49.615Z - normal: Start building raw assets
+2018-06-24T13:29:49.617Z - normal: Start building plugin scripts
+2018-06-24T13:29:49.732Z - normal: Finish building raw assets
+2018-06-24T13:29:49.737Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T13:29:49.873Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T13:35:39.545Z - warn: The Asset used by component "cc.Sprite" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/bg"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+
+2018-06-24T13:35:39.554Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:35:39.555Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:35:39.569Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:35:39.570Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:51:50.809Z - normal: Introduced global variable while editing: i
+2018-06-24T13:51:50.810Z - normal: Introduced global variable while editing: l
+2018-06-24T13:51:51.062Z - warn: The Asset used by component "cc.Sprite" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/bg"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+
+2018-06-24T13:51:51.062Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:51:51.063Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:51:51.064Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:51:51.065Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T13:51:54.145Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T13:51:54.153Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T13:51:54.153Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T13:51:54.154Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T13:51:56.742Z - normal: Compiled project javascript file successfully
+2018-06-24T13:51:56.742Z - normal: Start building assets
+2018-06-24T13:51:56.743Z - normal: Start spawn build-worker
+2018-06-24T13:51:57.322Z - normal: Finish spawn build-worker
+2018-06-24T13:51:57.322Z - normal: Start init build-worker
+2018-06-24T13:51:59.283Z - normal: 1.6.0
+2018-06-24T13:51:59.409Z - normal: Finish init build-worker
+2018-06-24T13:51:59.409Z - normal: Start build-assets in worker
+2018-06-24T13:51:59.623Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T13:51:59.738Z - warn: The referenced asset used in "db://assets/SDK/Prefabs/end.prefab" is not found, it may have been deleted. Detailed information:
+Node path: "end/bg"
+Used in Component: "cc.Sprite"
+uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+2018-06-24T13:51:59.740Z - warn: The referenced asset used in "db://assets/SDK/Prefabs/end.prefab" is not found, it may have been deleted. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Used in Component: "cc.Label"
+uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+2018-06-24T13:51:59.871Z - normal: Finish build-assets in worker
+2018-06-24T13:51:59.873Z - normal: Finish building assets
+2018-06-24T13:51:59.890Z - normal: Start building raw assets
+2018-06-24T13:51:59.891Z - normal: Start building plugin scripts
+2018-06-24T13:51:59.960Z - normal: Finish building raw assets
+2018-06-24T13:51:59.969Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T13:52:00.041Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T13:52:04.473Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T13:52:04.473Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T13:52:04.841Z - normal: Initializing...
+
+2018-06-24T13:52:04.849Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T13:52:04.865Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T13:52:04.865Z - normal: initialization finished
+
+2018-06-24T13:52:05.067Z - normal: open IDE success
+
+2018-06-24T13:53:34.765Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T13:53:34.767Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T13:53:35.056Z - normal: Initializing...
+
+2018-06-24T13:53:35.062Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T13:53:35.078Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T13:53:35.079Z - normal: initialization finished
+
+2018-06-24T13:53:35.234Z - normal: open IDE success
+
+2018-06-24T14:02:42.992Z - warn: The Asset used by component "cc.Sprite" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/bg"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+
+2018-06-24T14:02:42.993Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T14:02:42.994Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T14:02:42.994Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T14:02:42.994Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T14:02:44.287Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T14:02:44.296Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T14:02:44.296Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T14:02:44.297Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T14:02:46.833Z - normal: Compiled project javascript file successfully
+2018-06-24T14:02:46.833Z - normal: Start building assets
+2018-06-24T14:02:46.833Z - normal: Start spawn build-worker
+2018-06-24T14:02:47.411Z - normal: Finish spawn build-worker
+2018-06-24T14:02:47.411Z - normal: Start init build-worker
+2018-06-24T14:02:49.134Z - normal: 1.6.0
+2018-06-24T14:02:49.277Z - normal: Finish init build-worker
+2018-06-24T14:02:49.277Z - normal: Start build-assets in worker
+2018-06-24T14:02:49.477Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T14:02:49.604Z - warn: The referenced asset used in "db://assets/SDK/Prefabs/end.prefab" is not found, it may have been deleted. Detailed information:
+Node path: "end/bg"
+Used in Component: "cc.Sprite"
+uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+2018-06-24T14:02:49.605Z - warn: The referenced asset used in "db://assets/SDK/Prefabs/end.prefab" is not found, it may have been deleted. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Used in Component: "cc.Label"
+uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+2018-06-24T14:02:49.773Z - normal: Finish build-assets in worker
+2018-06-24T14:02:49.776Z - normal: Finish building assets
+2018-06-24T14:02:49.790Z - normal: Start building raw assets
+2018-06-24T14:02:49.791Z - normal: Start building plugin scripts
+2018-06-24T14:02:49.866Z - normal: Finish building raw assets
+2018-06-24T14:02:49.874Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T14:02:50.262Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T14:02:58.168Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T14:02:58.169Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T14:02:58.473Z - normal: Initializing...
+
+2018-06-24T14:02:58.480Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T14:02:58.497Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T14:02:58.497Z - normal: initialization finished
+
+2018-06-24T14:02:58.656Z - normal: open IDE success
+
+2018-06-24T14:12:26.058Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T14:12:26.067Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T14:12:26.068Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T14:12:26.068Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T14:12:28.618Z - normal: Compiled project javascript file successfully
+2018-06-24T14:12:28.619Z - normal: Start building assets
+2018-06-24T14:12:28.619Z - normal: Start spawn build-worker
+2018-06-24T14:12:29.252Z - normal: Finish spawn build-worker
+2018-06-24T14:12:29.252Z - normal: Start init build-worker
+2018-06-24T14:12:31.139Z - normal: 1.6.0
+2018-06-24T14:12:31.267Z - normal: Finish init build-worker
+2018-06-24T14:12:31.267Z - normal: Start build-assets in worker
+2018-06-24T14:12:31.488Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T14:12:31.629Z - warn: The referenced asset used in "db://assets/SDK/Prefabs/end.prefab" is not found, it may have been deleted. Detailed information:
+Node path: "end/bg"
+Used in Component: "cc.Sprite"
+uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+2018-06-24T14:12:31.630Z - warn: The referenced asset used in "db://assets/SDK/Prefabs/end.prefab" is not found, it may have been deleted. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Used in Component: "cc.Label"
+uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+2018-06-24T14:12:31.801Z - normal: Finish build-assets in worker
+2018-06-24T14:12:31.803Z - normal: Finish building assets
+2018-06-24T14:12:31.826Z - normal: Start building raw assets
+2018-06-24T14:12:31.827Z - normal: Start building plugin scripts
+2018-06-24T14:12:31.942Z - normal: Finish building raw assets
+2018-06-24T14:12:31.946Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T14:12:32.029Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T14:13:16.195Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T14:13:16.195Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T14:13:16.517Z - normal: Initializing...
+
+2018-06-24T14:13:16.524Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T14:13:16.541Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T14:13:16.541Z - normal: initialization finished
+
+2018-06-24T14:13:16.783Z - normal: open IDE success
+
+2018-06-24T14:17:09.123Z - normal: Introduced global variable while editing: i
+2018-06-24T14:17:09.124Z - normal: Introduced global variable while editing: l
+2018-06-24T14:17:09.340Z - warn: The Asset used by component "cc.Sprite" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/bg"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+
+2018-06-24T14:17:09.341Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T14:17:09.341Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T14:17:09.341Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T14:17:09.342Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T14:17:57.804Z - warn: The Asset used by component "cc.Sprite" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/bg"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "bc9ee2d4-96e0-45c5-bf88-7a72de301da6"
+
+2018-06-24T14:17:57.805Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T14:17:57.805Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/index-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T14:17:57.805Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label shadow"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T14:17:57.805Z - warn: The Asset used by component "cc.Label" in prefab "end.prefab" is missing. Detailed information:
+Node path: "end/play-again-btn/Label"
+Asset url: "db://assets/SDK/Prefabs/end.prefab"
+Missing uuid: "8918633f-3888-4c7a-bef8-212990bc834b"
+
+2018-06-24T14:19:14.669Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T14:19:14.678Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T14:19:14.678Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T14:19:14.679Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T14:19:17.277Z - normal: Compiled project javascript file successfully
+2018-06-24T14:19:17.277Z - normal: Start building assets
+2018-06-24T14:19:17.277Z - normal: Start spawn build-worker
+2018-06-24T14:19:17.929Z - normal: Finish spawn build-worker
+2018-06-24T14:19:17.929Z - normal: Start init build-worker
+2018-06-24T14:19:19.774Z - normal: 1.6.0
+2018-06-24T14:19:19.912Z - normal: Finish init build-worker
+2018-06-24T14:19:19.912Z - normal: Start build-assets in worker
+2018-06-24T14:19:20.125Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T14:19:20.386Z - normal: Finish build-assets in worker
+2018-06-24T14:19:20.389Z - normal: Finish building assets
+2018-06-24T14:19:20.404Z - normal: Start building raw assets
+2018-06-24T14:19:20.404Z - normal: Start building plugin scripts
+2018-06-24T14:19:20.483Z - normal: Finish building raw assets
+2018-06-24T14:19:20.486Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T14:19:20.541Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T14:19:22.279Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T14:19:22.280Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T14:19:22.576Z - normal: Initializing...
+
+2018-06-24T14:19:22.582Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T14:19:22.598Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T14:19:22.598Z - normal: initialization finished
+
+2018-06-24T14:19:22.840Z - normal: open IDE success
+
+2018-06-24T14:19:59.964Z - error: TypeError: Cannot read property 'node' of null
     at initializer.parent (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:1156:19)
     at HTMLImageElement.img.onload (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:3508:22)
-2018-06-10T01:44:10.435Z - error: TypeError: Cannot read property 'node' of null
+2018-06-24T14:20:19.340Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T14:20:19.342Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T14:20:19.343Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T14:20:19.343Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T14:20:22.100Z - normal: Compiled project javascript file successfully
+2018-06-24T14:20:22.100Z - normal: Start building assets
+2018-06-24T14:20:22.100Z - normal: Start spawn build-worker
+2018-06-24T14:20:22.730Z - normal: Finish spawn build-worker
+2018-06-24T14:20:22.731Z - normal: Start init build-worker
+2018-06-24T14:20:24.596Z - normal: 1.6.0
+2018-06-24T14:20:24.725Z - normal: Finish init build-worker
+2018-06-24T14:20:24.725Z - normal: Start build-assets in worker
+2018-06-24T14:20:24.923Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T14:20:25.193Z - normal: Finish build-assets in worker
+2018-06-24T14:20:25.196Z - normal: Finish building assets
+2018-06-24T14:20:25.211Z - normal: Start building raw assets
+2018-06-24T14:20:25.212Z - normal: Start building plugin scripts
+2018-06-24T14:20:25.292Z - normal: Finish building raw assets
+2018-06-24T14:20:25.294Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T14:20:25.361Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T14:20:26.546Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T14:20:26.546Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T14:20:26.836Z - normal: Initializing...
+
+2018-06-24T14:20:26.842Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T14:20:26.860Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T14:20:26.860Z - normal: initialization finished
+
+2018-06-24T14:20:27.028Z - normal: open IDE success
+
+2018-06-24T14:21:25.412Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T14:21:25.413Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T14:21:25.414Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T14:21:25.414Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T14:21:28.249Z - normal: Compiled project javascript file successfully
+2018-06-24T14:21:28.251Z - normal: Start building assets
+2018-06-24T14:21:28.251Z - normal: Start spawn build-worker
+2018-06-24T14:21:29.063Z - normal: Finish spawn build-worker
+2018-06-24T14:21:29.063Z - normal: Start init build-worker
+2018-06-24T14:21:31.567Z - normal: 1.6.0
+2018-06-24T14:21:31.779Z - normal: Finish init build-worker
+2018-06-24T14:21:31.779Z - normal: Start build-assets in worker
+2018-06-24T14:21:32.084Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T14:21:32.445Z - normal: Finish build-assets in worker
+2018-06-24T14:21:32.447Z - normal: Finish building assets
+2018-06-24T14:21:32.469Z - normal: Start building raw assets
+2018-06-24T14:21:32.470Z - normal: Start building plugin scripts
+2018-06-24T14:21:32.573Z - normal: Finish building raw assets
+2018-06-24T14:21:32.582Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T14:21:33.072Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T14:28:46.707Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T14:28:46.716Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T14:28:46.716Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T14:28:46.717Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T14:28:49.409Z - normal: Compiled project javascript file successfully
+2018-06-24T14:28:49.410Z - normal: Start building assets
+2018-06-24T14:28:49.410Z - normal: Start spawn build-worker
+2018-06-24T14:28:50.129Z - normal: Finish spawn build-worker
+2018-06-24T14:28:50.129Z - normal: Start init build-worker
+2018-06-24T14:28:52.260Z - normal: 1.6.0
+2018-06-24T14:28:52.390Z - normal: Finish init build-worker
+2018-06-24T14:28:52.390Z - normal: Start build-assets in worker
+2018-06-24T14:28:52.730Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T14:28:53.141Z - normal: Finish build-assets in worker
+2018-06-24T14:28:53.152Z - normal: Finish building assets
+2018-06-24T14:28:53.175Z - normal: Start building raw assets
+2018-06-24T14:28:53.175Z - normal: Start building plugin scripts
+2018-06-24T14:28:53.258Z - normal: Finish building raw assets
+2018-06-24T14:28:53.268Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T14:28:53.663Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T14:32:14.040Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T14:32:14.041Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T14:32:14.420Z - normal: Initializing...
+
+2018-06-24T14:32:14.426Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T14:32:14.443Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+initialization finished
+
+2018-06-24T14:32:14.699Z - normal: open IDE success
+
+2018-06-24T14:37:01.912Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": true,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": true,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T14:37:01.922Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T14:37:01.922Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T14:37:01.924Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T14:37:04.400Z - normal: Compiled project javascript file successfully
+2018-06-24T14:37:04.400Z - normal: Start building assets
+2018-06-24T14:37:04.400Z - normal: Start spawn build-worker
+2018-06-24T14:37:04.998Z - normal: Finish spawn build-worker
+2018-06-24T14:37:04.998Z - normal: Start init build-worker
+2018-06-24T14:37:06.947Z - normal: 1.6.0
+2018-06-24T14:37:07.081Z - normal: Finish init build-worker
+2018-06-24T14:37:07.081Z - normal: Start build-assets in worker
+2018-06-24T14:37:07.295Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T14:37:07.558Z - normal: Finish build-assets in worker
+2018-06-24T14:37:07.562Z - normal: Finish building assets
+2018-06-24T14:37:07.578Z - normal: Start building raw assets
+2018-06-24T14:37:07.578Z - normal: Start building plugin scripts
+2018-06-24T14:37:07.657Z - normal: Finish building raw assets
+2018-06-24T14:37:07.662Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T14:37:07.721Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T14:37:46.806Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": true,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": true,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T14:37:46.808Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T14:37:46.809Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T14:37:46.809Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T14:37:50.290Z - normal: Compiled project javascript file successfully
+2018-06-24T14:37:50.290Z - normal: Start building assets
+2018-06-24T14:37:50.290Z - normal: Start spawn build-worker
+2018-06-24T14:37:50.972Z - normal: Finish spawn build-worker
+2018-06-24T14:37:50.972Z - normal: Start init build-worker
+2018-06-24T14:37:53.002Z - normal: 1.6.0
+2018-06-24T14:37:53.130Z - normal: Finish init build-worker
+2018-06-24T14:37:53.130Z - normal: Start build-assets in worker
+2018-06-24T14:37:53.344Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T14:37:53.604Z - normal: Finish build-assets in worker
+2018-06-24T14:37:53.606Z - normal: Finish building assets
+2018-06-24T14:37:53.622Z - normal: Start building raw assets
+2018-06-24T14:37:53.622Z - normal: Start building plugin scripts
+2018-06-24T14:37:53.694Z - normal: Finish building raw assets
+2018-06-24T14:37:53.696Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T14:37:53.750Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T14:53:30.072Z - error: TypeError: Cannot read property 'node' of null
     at initializer.parent (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:1156:19)
     at HTMLImageElement.img.onload (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:3508:22)
-2018-06-10T01:44:10.436Z - error: TypeError: Cannot read property 'node' of null
-    at initializer.parent (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:1156:19)
-    at HTMLImageElement.img.onload (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:3508:22)
-2018-06-10T01:45:36.285Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T01:45:42.457Z - error: TypeError: Cannot read property 'node' of null
-    at initializer.parent (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:1156:19)
-    at HTMLImageElement.img.onload (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:3508:22)
-2018-06-10T01:45:42.458Z - error: TypeError: Cannot read property 'node' of null
-    at initializer.parent (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:1156:19)
-    at HTMLImageElement.img.onload (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:3508:22)
-2018-06-10T01:48:47.797Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T07:32:34.411Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T07:35:28.118Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T08:12:59.027Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T08:14:03.712Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T08:15:47.578Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T08:18:27.525Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T08:20:13.384Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T08:20:21.323Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T08:22:15.367Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T08:23:10.863Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T08:48:10.461Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T08:48:27.515Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T08:49:03.263Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T08:50:41.722Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T08:56:03.473Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T08:59:33.464Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T09:01:36.198Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T09:02:04.032Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T09:03:00.530Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T09:03:17.103Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T09:11:24.504Z - error: TypeError: Cannot read property 'node' of null
-    at initializer.parent (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:1156:19)
-    at HTMLImageElement.img.onload (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:3508:22)
-2018-06-10T09:11:24.508Z - error: TypeError: Cannot read property 'node' of null
-    at initializer.parent (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:1156:19)
-    at HTMLImageElement.img.onload (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:3508:22)
-2018-06-10T09:11:43.592Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T09:11:47.021Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T13:32:55.660Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T13:37:10.548Z - error: Property 'CCClass.config' must define at least one of 'default', 'get' or 'set'.
-    at Object.errorID (/Users/workspace/engine/CCDebugger.js:343:18)
-    at Object.exports.preprocessAttrs (/Users/workspace/engine/cocos2d/core/platform/preprocess-class.js:232:28)
-    at declareProperties (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:807:20)
-    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:947:9)
-    at __define (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:10:24)
-    at /Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:20:13
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:27:11)
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:30:3)
+2018-06-24T14:54:44.859Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": true,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": true,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T14:54:44.868Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T14:54:44.868Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T14:54:44.869Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T14:54:47.235Z - normal: Compiled project javascript file successfully
+2018-06-24T14:54:47.235Z - normal: Start building assets
+2018-06-24T14:54:47.235Z - normal: Start spawn build-worker
+2018-06-24T14:54:47.856Z - normal: Finish spawn build-worker
+2018-06-24T14:54:47.857Z - normal: Start init build-worker
+2018-06-24T14:54:49.566Z - normal: 1.6.0
+2018-06-24T14:54:49.685Z - normal: Finish init build-worker
+2018-06-24T14:54:49.685Z - normal: Start build-assets in worker
+2018-06-24T14:54:49.881Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T14:54:50.144Z - normal: Finish build-assets in worker
+2018-06-24T14:54:50.147Z - normal: Finish building assets
+2018-06-24T14:54:50.163Z - normal: Start building raw assets
+2018-06-24T14:54:50.164Z - normal: Start building plugin scripts
+2018-06-24T14:54:50.260Z - normal: Finish building raw assets
+2018-06-24T14:54:50.264Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T14:54:50.322Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T14:55:37.495Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T14:55:37.495Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T14:55:37.903Z - normal: Initializing...
+
+2018-06-24T14:55:37.910Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T14:55:37.926Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T14:55:37.926Z - normal: initialization finished
+
+2018-06-24T14:55:38.079Z - normal: open IDE success
+
+2018-06-24T14:56:25.753Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": true,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": true,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T14:56:25.761Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T14:56:25.761Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T14:56:25.762Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T14:56:28.288Z - normal: Compiled project javascript file successfully
+2018-06-24T14:56:28.288Z - normal: Start building assets
+2018-06-24T14:56:28.288Z - normal: Start spawn build-worker
+2018-06-24T14:56:28.899Z - normal: Finish spawn build-worker
+2018-06-24T14:56:28.899Z - normal: Start init build-worker
+2018-06-24T14:56:30.700Z - normal: 1.6.0
+2018-06-24T14:56:30.830Z - normal: Finish init build-worker
+2018-06-24T14:56:30.831Z - normal: Start build-assets in worker
+2018-06-24T14:56:31.042Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T14:56:31.294Z - normal: Finish build-assets in worker
+2018-06-24T14:56:31.298Z - normal: Finish building assets
+2018-06-24T14:56:31.315Z - normal: Start building raw assets
+2018-06-24T14:56:31.315Z - normal: Start building plugin scripts
+2018-06-24T14:56:31.392Z - normal: Finish building raw assets
+2018-06-24T14:56:31.401Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T14:56:31.770Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T14:56:38.065Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T14:56:38.065Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T14:56:38.430Z - normal: Initializing...
+
+2018-06-24T14:56:38.436Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T14:56:38.453Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T14:56:38.453Z - normal: initialization finished
+
+2018-06-24T14:56:38.615Z - normal: open IDE success
+
+2018-06-24T14:59:38.986Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": true,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": true,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T14:59:39.008Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T14:59:39.009Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T14:59:39.010Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T14:59:46.947Z - normal: Compiled project javascript file successfully
+2018-06-24T14:59:46.948Z - normal: Start building assets
+2018-06-24T14:59:46.948Z - normal: Start spawn build-worker
+2018-06-24T14:59:49.029Z - normal: Finish spawn build-worker
+2018-06-24T14:59:49.029Z - normal: Start init build-worker
+2018-06-24T14:59:54.696Z - normal: 1.6.0
+2018-06-24T14:59:54.977Z - normal: Finish init build-worker
+2018-06-24T14:59:54.977Z - normal: Start build-assets in worker
+2018-06-24T14:59:55.417Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T14:59:56.241Z - normal: Finish build-assets in worker
+2018-06-24T14:59:56.253Z - normal: Finish building assets
+2018-06-24T14:59:56.289Z - normal: Start building raw assets
+2018-06-24T14:59:56.290Z - normal: Start building plugin scripts
+2018-06-24T14:59:56.431Z - normal: Finish building raw assets
+2018-06-24T14:59:56.441Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T14:59:56.569Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T15:33:00.807Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:406126
+2018-06-24T15:35:26.740Z - warn: The Label referenced by component "star-description" is invalid. Detailed information:
+Node path: "Canvas/game-over-node/center/star-description"
+
+2018-06-24T15:35:26.742Z - warn: The Label referenced by component "star-description" is invalid. Detailed information:
+Node path: "Canvas/game-over-node/center/star-description"
+
+2018-06-24T15:36:13.584Z - error: Overwriting 'destroy' function in 'star-description' class without calling super is not allowed. Call the super function in 'destroy' please.
+    at Object.exports.doValidateMethodWithProps_DEV (/Users/workspace/engine/cocos2d/core/platform/preprocess-class.js:279:16)
+    at Object.exports.validateMethodWithProps (/Users/workspace/engine/cocos2d/core/platform/preprocess-class.js:291:18)
+    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:973:25)
+    at __define (/Users/workspace/crazy-games/twenty/temp/quick-scripts/assets/Script/pannel/star-description.js:17:4)
+    at /Users/workspace/crazy-games/twenty/temp/quick-scripts/assets/Script/pannel/star-description.js:46:13
+    at Object.<anonymous> (/Users/workspace/crazy-games/twenty/temp/quick-scripts/assets/Script/pannel/star-description.js:53:11)
+    at Object.<anonymous> (/Users/workspace/crazy-games/twenty/temp/quick-scripts/assets/Script/pannel/star-description.js:56:3)
     at Module._compile (module.js:571:32)
-2018-06-10T13:37:10.551Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T14:01:42.637Z - error: Property 'CCClass.starConfig' must define at least one of 'default', 'get' or 'set'.
-    at Object.errorID (/Users/workspace/engine/CCDebugger.js:343:18)
-    at Object.exports.preprocessAttrs (/Users/workspace/engine/cocos2d/core/platform/preprocess-class.js:232:28)
-    at declareProperties (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:807:20)
-    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:947:9)
-    at __define (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:10:24)
-    at /Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:69:13
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:76:11)
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:79:3)
+    at Object.Module._extensions..js (module.js:580:10)
+2018-06-24T15:36:32.664Z - error: Overwriting 'destroy' function in 'star-description' class without calling super is not allowed. Call the super function in 'destroy' please.
+    at Object.exports.doValidateMethodWithProps_DEV (/Users/workspace/engine/cocos2d/core/platform/preprocess-class.js:279:16)
+    at Object.exports.validateMethodWithProps (/Users/workspace/engine/cocos2d/core/platform/preprocess-class.js:291:18)
+    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:973:25)
+    at __define (/Users/workspace/crazy-games/twenty/temp/quick-scripts/assets/Script/pannel/star-description.js:21:4)
+    at /Users/workspace/crazy-games/twenty/temp/quick-scripts/assets/Script/pannel/star-description.js:51:13
+    at Object.<anonymous> (/Users/workspace/crazy-games/twenty/temp/quick-scripts/assets/Script/pannel/star-description.js:58:11)
+    at Object.<anonymous> (/Users/workspace/crazy-games/twenty/temp/quick-scripts/assets/Script/pannel/star-description.js:61:3)
     at Module._compile (module.js:571:32)
-2018-06-10T14:01:42.640Z - error: Unknown 'type' parameter of CCClass.levelConfig：Neptune
-    at Object.errorID (/Users/workspace/engine/CCDebugger.js:343:18)
-    at parseAttributes (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:1157:24)
-    at defineProp (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:147:17)
-    at declareProperties (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:812:17)
-    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:947:9)
-    at __define (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:10:24)
-    at /Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:69:13
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:76:11)
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:79:3)
-2018-06-10T14:01:42.641Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T14:02:18.277Z - error: Property 'CCClass.starConfig' must define at least one of 'default', 'get' or 'set'.
-    at Object.errorID (/Users/workspace/engine/CCDebugger.js:343:18)
-    at Object.exports.preprocessAttrs (/Users/workspace/engine/cocos2d/core/platform/preprocess-class.js:232:28)
-    at declareProperties (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:807:20)
-    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:947:9)
-    at __define (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:10:24)
-    at /Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:69:13
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:76:11)
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:79:3)
+    at Object.Module._extensions..js (module.js:580:10)
+2018-06-24T15:36:56.195Z - failed: [db-task][sync-changes] Failed to import asset /Users/workspace/crazy-games/twenty/assets/Script/pannel/star-description.js, message: Compile error: SyntaxError: /Users/workspace/crazy-games/twenty/assets/Script/pannel/star-description.js: super() outside of class constructor (24:4)
+  22 |   },
+  23 |   destroy(){
+> 24 |     super();
+     |     ^
+  25 |     cc.game.off("max-level-changed",this.onMaxLevelChanged,this);
+  26 |   },
+  27 | 
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.parseExprAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3622:14)
+    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3306:19)
+    at Parser.pp$1.parseStatement (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1906:19)
+    at Parser.pp$1.parseBlockBody (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:2268:21)
+2018-06-24T15:37:07.259Z - error: Overwriting 'destroy' function in 'star-description' class without calling super is not allowed. Call the super function in 'destroy' please.
+    at Object.exports.doValidateMethodWithProps_DEV (/Users/workspace/engine/cocos2d/core/platform/preprocess-class.js:279:16)
+    at Object.exports.validateMethodWithProps (/Users/workspace/engine/cocos2d/core/platform/preprocess-class.js:291:18)
+    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:973:25)
+    at __define (/Users/workspace/crazy-games/twenty/temp/quick-scripts/assets/Script/pannel/star-description.js:21:4)
+    at /Users/workspace/crazy-games/twenty/temp/quick-scripts/assets/Script/pannel/star-description.js:51:13
+    at Object.<anonymous> (/Users/workspace/crazy-games/twenty/temp/quick-scripts/assets/Script/pannel/star-description.js:58:11)
+    at Object.<anonymous> (/Users/workspace/crazy-games/twenty/temp/quick-scripts/assets/Script/pannel/star-description.js:61:3)
     at Module._compile (module.js:571:32)
-2018-06-10T14:02:18.278Z - error: Unknown 'type' parameter of CCClass.levelConfig：Neptune
-    at Object.errorID (/Users/workspace/engine/CCDebugger.js:343:18)
-    at parseAttributes (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:1157:24)
-    at defineProp (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:147:17)
-    at declareProperties (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:812:17)
-    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:947:9)
-    at __define (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:10:24)
-    at /Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:69:13
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:76:11)
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:79:3)
-2018-06-10T14:02:18.280Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T14:02:30.906Z - error: Property 'CCClass.starConfig' must define at least one of 'default', 'get' or 'set'.
-    at Object.errorID (/Users/workspace/engine/CCDebugger.js:343:18)
-    at Object.exports.preprocessAttrs (/Users/workspace/engine/cocos2d/core/platform/preprocess-class.js:232:28)
-    at declareProperties (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:807:20)
-    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:947:9)
-    at __define (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:10:24)
-    at /Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:69:13
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:76:11)
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:79:3)
+    at Object.Module._extensions..js (module.js:580:10)
+2018-06-24T15:37:11.502Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": true,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": true,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T15:37:11.515Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T15:37:11.515Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T15:37:11.517Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T15:37:17.106Z - normal: Compiled project javascript file successfully
+2018-06-24T15:37:17.107Z - normal: Start building assets
+2018-06-24T15:37:17.107Z - normal: Start spawn build-worker
+2018-06-24T15:37:18.307Z - normal: Finish spawn build-worker
+2018-06-24T15:37:18.307Z - normal: Start init build-worker
+2018-06-24T15:37:21.732Z - normal: 1.6.0
+2018-06-24T15:37:21.925Z - normal: Finish init build-worker
+2018-06-24T15:37:21.925Z - normal: Start build-assets in worker
+2018-06-24T15:37:22.283Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T15:37:22.764Z - normal: Finish build-assets in worker
+2018-06-24T15:37:22.770Z - normal: Finish building assets
+2018-06-24T15:37:22.796Z - normal: Start building raw assets
+2018-06-24T15:37:22.797Z - normal: Start building plugin scripts
+2018-06-24T15:37:22.925Z - normal: Finish building raw assets
+2018-06-24T15:37:22.932Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T15:37:23.032Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T15:37:24.399Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T15:37:24.399Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T15:37:25.172Z - normal: Initializing...
+
+2018-06-24T15:37:25.188Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T15:37:25.225Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T15:37:25.226Z - normal: initialization finished
+
+2018-06-24T15:37:25.460Z - normal: open IDE success
+
+2018-06-24T15:40:13.922Z - error: Overwriting 'destroy' function in 'star-description' class without calling super is not allowed. Call the super function in 'destroy' please.
+    at Object.exports.doValidateMethodWithProps_DEV (/Users/workspace/engine/cocos2d/core/platform/preprocess-class.js:279:16)
+    at Object.exports.validateMethodWithProps (/Users/workspace/engine/cocos2d/core/platform/preprocess-class.js:291:18)
+    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:973:25)
+    at __define (/Users/workspace/crazy-games/twenty/temp/quick-scripts/assets/Script/pannel/star-description.js:23:4)
+    at /Users/workspace/crazy-games/twenty/temp/quick-scripts/assets/Script/pannel/star-description.js:52:13
+    at Object.<anonymous> (/Users/workspace/crazy-games/twenty/temp/quick-scripts/assets/Script/pannel/star-description.js:59:11)
+    at Object.<anonymous> (/Users/workspace/crazy-games/twenty/temp/quick-scripts/assets/Script/pannel/star-description.js:62:3)
     at Module._compile (module.js:571:32)
-2018-06-10T14:02:30.907Z - error: Unknown 'type' parameter of CCClass.levelConfig：Neptune
-    at Object.errorID (/Users/workspace/engine/CCDebugger.js:343:18)
-    at parseAttributes (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:1157:24)
-    at defineProp (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:147:17)
-    at declareProperties (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:812:17)
-    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:947:9)
-    at __define (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:10:24)
-    at /Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:69:13
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:76:11)
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:79:3)
-2018-06-10T14:02:30.910Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T14:04:34.804Z - error: Can not set default value to non-empty object, unless the object derived from cc.ValueType and overwrite the 'clone' function. Set default value of CCClass.starConfig to null or {}, and initialize in 'onLoad' or 'ctor' please. (just like 'this.starConfig = {foo: bar};')
-    at Object.errorID (/Users/workspace/engine/CCDebugger.js:343:18)
-    at defineProp (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:125:28)
-    at declareProperties (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:812:17)
-    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:947:9)
-    at __define (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:10:24)
-    at /Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:72:13
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:79:11)
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:82:3)
-    at Module._compile (module.js:571:32)
-2018-06-10T14:04:34.808Z - error: Unknown 'type' parameter of CCClass.levelConfig：Neptune
-    at Object.errorID (/Users/workspace/engine/CCDebugger.js:343:18)
-    at parseAttributes (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:1157:24)
-    at defineProp (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:147:17)
-    at declareProperties (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:812:17)
-    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:947:9)
-    at __define (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:10:24)
-    at /Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:72:13
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:79:11)
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:82:3)
-2018-06-10T14:04:34.808Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T14:04:48.284Z - error: Can not set default value to non-empty object, unless the object derived from cc.ValueType and overwrite the 'clone' function. Set default value of CCClass.starConfig to null or {}, and initialize in 'onLoad' or 'ctor' please. (just like 'this.starConfig = {foo: bar};')
-    at Object.errorID (/Users/workspace/engine/CCDebugger.js:343:18)
-    at defineProp (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:125:28)
-    at declareProperties (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:812:17)
-    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:947:9)
-    at __define (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:10:24)
-    at /Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:72:13
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:79:11)
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:82:3)
-    at Module._compile (module.js:571:32)
-2018-06-10T14:04:48.285Z - error: Unknown 'type' parameter of CCClass.levelConfig：Neptune
-    at Object.errorID (/Users/workspace/engine/CCDebugger.js:343:18)
-    at parseAttributes (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:1157:24)
-    at defineProp (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:147:17)
-    at declareProperties (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:812:17)
-    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:947:9)
-    at __define (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:10:24)
-    at /Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:72:13
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:79:11)
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:82:3)
-2018-06-10T14:04:48.287Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T14:05:51.438Z - error: Unknown 'type' parameter of CCClass.levelConfig：Neptune
-    at Object.errorID (/Users/workspace/engine/CCDebugger.js:343:18)
-    at parseAttributes (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:1157:24)
-    at defineProp (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:147:17)
-    at declareProperties (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:812:17)
-    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:947:9)
-    at __define (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:10:24)
-    at /Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:72:13
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:79:11)
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:82:3)
-2018-06-10T14:05:51.440Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T14:06:51.720Z - error: Property 'CCClass.starConfig' must define at least one of 'default', 'get' or 'set'.
-    at Object.errorID (/Users/workspace/engine/CCDebugger.js:343:18)
-    at Object.exports.preprocessAttrs (/Users/workspace/engine/cocos2d/core/platform/preprocess-class.js:232:28)
-    at declareProperties (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:807:20)
-    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:947:9)
-    at __define (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:10:24)
-    at /Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:73:13
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:80:11)
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:83:3)
-    at Module._compile (module.js:571:32)
-2018-06-10T14:06:51.723Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T14:07:28.747Z - error: Property 'CCClass.starConfig' must define at least one of 'default', 'get' or 'set'.
-    at Object.errorID (/Users/workspace/engine/CCDebugger.js:343:18)
-    at Object.exports.preprocessAttrs (/Users/workspace/engine/cocos2d/core/platform/preprocess-class.js:232:28)
-    at declareProperties (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:807:20)
-    at Object.CCClass [as Class] (/Users/workspace/engine/cocos2d/core/platform/CCClass.js:947:9)
-    at __define (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:10:24)
-    at /Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:73:13
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:80:11)
-    at Object.<anonymous> (/Users/workspace/twenty/temp/quick-scripts/assets/Script/config-manager.js:83:3)
-    at Module._compile (module.js:571:32)
-2018-06-10T14:07:28.749Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T14:07:46.814Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T14:16:05.417Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T14:36:15.605Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:758199
-2018-06-10T14:39:41.667Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:762584
-2018-06-10T14:39:41.720Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:762589
-2018-06-10T14:39:41.721Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:762592
-2018-06-10T14:39:41.723Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:762595
-2018-06-10T14:43:55.926Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:769020
-2018-06-10T14:52:26.577Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:782121
-2018-06-10T14:57:34.750Z - normal: Introduced global variable while editing: i
-2018-06-10T14:57:34.752Z - normal: Introduced global variable while editing: l
-2018-06-10T14:57:35.060Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T14:58:52.259Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T14:59:30.285Z - error: TypeError: Cannot read property 'node' of null
+    at Object.Module._extensions..js (module.js:580:10)
+2018-06-24T15:41:43.870Z - error: TypeError: Cannot read property 'node' of null
     at initializer.parent (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:1156:19)
     at HTMLImageElement.img.onload (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:3508:22)
-2018-06-10T14:59:30.286Z - error: TypeError: Cannot read property 'node' of null
+2018-06-24T15:43:07.926Z - error: TypeError: Cannot read property 'node' of null
     at initializer.parent (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:1156:19)
     at HTMLImageElement.img.onload (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:3508:22)
-2018-06-10T15:00:19.668Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T15:00:29.735Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T15:25:17.768Z - normal: Introduced global variable while editing: i
-2018-06-10T15:25:17.772Z - normal: Introduced global variable while editing: l
-2018-06-10T15:25:18.226Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T15:29:56.447Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T15:36:30.079Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T15:37:05.541Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T15:44:33.990Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T15:47:40.717Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T15:48:24.211Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T15:49:25.551Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T15:50:23.557Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T15:52:44.507Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T15:53:56.867Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T15:55:10.120Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T15:56:27.924Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T16:24:42.612Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T16:25:11.332Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T17:25:00.089Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T17:25:25.338Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T17:26:11.357Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
-2018-06-10T17:31:42.927Z - error: TypeError: Cannot read property 'node' of null
+2018-06-24T15:45:05.956Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T15:45:05.970Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T15:45:05.971Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T15:45:05.972Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T15:45:12.432Z - normal: Compiled project javascript file successfully
+2018-06-24T15:45:12.433Z - normal: Start building assets
+2018-06-24T15:45:12.433Z - normal: Start spawn build-worker
+2018-06-24T15:45:14.123Z - normal: Finish spawn build-worker
+2018-06-24T15:45:14.123Z - normal: Start init build-worker
+2018-06-24T15:45:18.981Z - normal: 1.6.0
+2018-06-24T15:45:19.222Z - normal: Finish init build-worker
+2018-06-24T15:45:19.222Z - normal: Start build-assets in worker
+2018-06-24T15:45:19.627Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T15:45:20.332Z - normal: Finish build-assets in worker
+2018-06-24T15:45:20.338Z - normal: Finish building assets
+2018-06-24T15:45:20.371Z - normal: Start building raw assets
+2018-06-24T15:45:20.373Z - normal: Start building plugin scripts
+2018-06-24T15:45:20.533Z - normal: Finish building raw assets
+2018-06-24T15:45:20.544Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T15:45:20.690Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T15:45:22.038Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T15:45:22.038Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T15:45:23.163Z - normal: Initializing...
+
+2018-06-24T15:45:23.178Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T15:45:23.222Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T15:45:23.223Z - normal: initialization finished
+
+2018-06-24T15:45:23.443Z - normal: open IDE success
+
+2018-06-24T15:45:58.970Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:424857
+2018-06-24T15:46:16.771Z - error: TypeError: Cannot read property 'node' of null
     at initializer.parent (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:1156:19)
     at HTMLImageElement.img.onload (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:3508:22)
-2018-06-10T17:31:42.930Z - error: TypeError: Cannot read property 'node' of null
+2018-06-24T15:46:55.795Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T15:46:55.799Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T15:46:55.800Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T15:46:55.801Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T15:46:59.889Z - normal: Compiled project javascript file successfully
+2018-06-24T15:46:59.890Z - normal: Start building assets
+2018-06-24T15:46:59.890Z - normal: Start spawn build-worker
+2018-06-24T15:47:01.070Z - normal: Finish spawn build-worker
+2018-06-24T15:47:01.070Z - normal: Start init build-worker
+2018-06-24T15:47:04.765Z - normal: 1.6.0
+2018-06-24T15:47:04.982Z - normal: Finish init build-worker
+2018-06-24T15:47:04.982Z - normal: Start build-assets in worker
+2018-06-24T15:47:05.434Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T15:47:05.959Z - normal: Finish build-assets in worker
+2018-06-24T15:47:05.967Z - normal: Finish building assets
+2018-06-24T15:47:05.991Z - normal: Start building raw assets
+2018-06-24T15:47:05.992Z - normal: Start building plugin scripts
+2018-06-24T15:47:06.121Z - normal: Finish building raw assets
+2018-06-24T15:47:06.126Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T15:47:06.298Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T15:47:10.383Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T15:47:10.383Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T15:47:11.042Z - normal: Initializing...
+
+2018-06-24T15:47:11.055Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T15:47:11.087Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T15:47:11.088Z - normal: initialization finished
+
+2018-06-24T15:47:11.255Z - normal: open IDE success
+
+2018-06-24T16:02:01.424Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T16:02:01.435Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T16:02:01.435Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T16:02:01.436Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T16:02:07.152Z - normal: Compiled project javascript file successfully
+2018-06-24T16:02:07.152Z - normal: Start building assets
+2018-06-24T16:02:07.152Z - normal: Start spawn build-worker
+2018-06-24T16:02:09.133Z - normal: Finish spawn build-worker
+2018-06-24T16:02:09.134Z - normal: Start init build-worker
+2018-06-24T16:02:13.176Z - normal: 1.6.0
+2018-06-24T16:02:13.439Z - normal: Finish init build-worker
+2018-06-24T16:02:13.439Z - normal: Start build-assets in worker
+2018-06-24T16:02:13.944Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T16:02:15.043Z - normal: Finish build-assets in worker
+2018-06-24T16:02:15.053Z - normal: Finish building assets
+2018-06-24T16:02:15.087Z - normal: Start building raw assets
+2018-06-24T16:02:15.088Z - normal: Start building plugin scripts
+2018-06-24T16:02:15.214Z - normal: Finish building raw assets
+2018-06-24T16:02:15.223Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T16:02:15.351Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T16:04:17.548Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T16:04:17.561Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T16:04:17.562Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T16:04:17.563Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T16:04:22.625Z - normal: Compiled project javascript file successfully
+2018-06-24T16:04:22.625Z - normal: Start building assets
+2018-06-24T16:04:22.625Z - normal: Start spawn build-worker
+2018-06-24T16:04:23.757Z - normal: Finish spawn build-worker
+2018-06-24T16:04:23.758Z - normal: Start init build-worker
+2018-06-24T16:04:26.845Z - normal: 1.6.0
+2018-06-24T16:04:27.065Z - normal: Finish init build-worker
+2018-06-24T16:04:27.065Z - normal: Start build-assets in worker
+2018-06-24T16:04:27.429Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T16:04:27.892Z - normal: Finish build-assets in worker
+2018-06-24T16:04:27.900Z - normal: Finish building assets
+2018-06-24T16:04:27.921Z - normal: Start building raw assets
+2018-06-24T16:04:27.922Z - normal: Start building plugin scripts
+2018-06-24T16:04:28.023Z - normal: Finish building raw assets
+2018-06-24T16:04:28.028Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T16:04:28.109Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T16:04:29.272Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T16:04:29.272Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T16:04:29.864Z - normal: Initializing...
+
+2018-06-24T16:04:29.875Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T16:04:29.902Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T16:04:29.903Z - normal: initialization finished
+
+2018-06-24T16:04:30.058Z - normal: open IDE success
+
+2018-06-24T16:05:43.147Z - failed: [db-task][sync-changes] Failed to import asset /Users/workspace/crazy-games/twenty/assets/Script/pannel/star-description.js, message: Compile error: SyntaxError: /Users/workspace/crazy-games/twenty/assets/Script/pannel/star-description.js: Unexpected token (18:2)
+  16 |     labelDes:cc.RichText,
+  17 |     star:
+> 18 |   },
+     |   ^
+  19 | 
+  20 |   start () {
+  21 |     cc.log("init star-description layer");
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1761:8)
+    at Parser.pp$3.parseExprAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3750:12)
+    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseObjectProperty (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4115:99)
+    at Parser.pp$3.parseObjPropValue (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4140:84)
+2018-06-24T16:06:33.259Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T16:06:33.273Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T16:06:33.273Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T16:06:33.274Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T16:06:39.693Z - normal: Compiled project javascript file successfully
+2018-06-24T16:06:39.694Z - normal: Start building assets
+2018-06-24T16:06:39.694Z - normal: Start spawn build-worker
+2018-06-24T16:06:40.717Z - normal: Finish spawn build-worker
+2018-06-24T16:06:40.717Z - normal: Start init build-worker
+2018-06-24T16:06:43.903Z - normal: 1.6.0
+2018-06-24T16:06:44.156Z - normal: Finish init build-worker
+2018-06-24T16:06:44.156Z - normal: Start build-assets in worker
+2018-06-24T16:06:44.496Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T16:06:44.933Z - normal: Finish build-assets in worker
+2018-06-24T16:06:44.941Z - normal: Finish building assets
+2018-06-24T16:06:44.965Z - normal: Start building raw assets
+2018-06-24T16:06:44.966Z - normal: Start building plugin scripts
+2018-06-24T16:06:45.088Z - normal: Finish building raw assets
+2018-06-24T16:06:45.092Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T16:06:45.177Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T16:06:47.532Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T16:06:47.532Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T16:06:48.168Z - normal: Initializing...
+
+2018-06-24T16:06:48.178Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T16:06:48.202Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T16:06:48.203Z - normal: initialization finished
+
+2018-06-24T16:06:48.371Z - normal: open IDE success
+
+2018-06-24T16:08:00.881Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T16:08:00.887Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T16:08:00.887Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T16:08:00.888Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T16:08:09.079Z - normal: Compiled project javascript file successfully
+2018-06-24T16:08:09.080Z - normal: Start building assets
+2018-06-24T16:08:09.080Z - normal: Start spawn build-worker
+2018-06-24T16:08:10.420Z - normal: Finish spawn build-worker
+2018-06-24T16:08:10.420Z - normal: Start init build-worker
+2018-06-24T16:08:13.539Z - normal: 1.6.0
+2018-06-24T16:08:13.715Z - normal: Finish init build-worker
+2018-06-24T16:08:13.717Z - normal: Start build-assets in worker
+2018-06-24T16:08:14.059Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T16:08:14.452Z - normal: Finish build-assets in worker
+2018-06-24T16:08:14.455Z - normal: Finish building assets
+2018-06-24T16:08:14.477Z - normal: Start building raw assets
+2018-06-24T16:08:14.477Z - normal: Start building plugin scripts
+2018-06-24T16:08:14.575Z - normal: Finish building raw assets
+2018-06-24T16:08:14.582Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T16:08:14.672Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T16:08:16.388Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T16:08:16.388Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T16:08:17.069Z - normal: Initializing...
+
+2018-06-24T16:08:17.079Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T16:08:17.106Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T16:08:17.107Z - normal: initialization finished
+
+2018-06-24T16:08:17.325Z - normal: open IDE success
+
+2018-06-24T16:09:12.995Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T16:09:13.010Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T16:09:13.011Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T16:09:13.012Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T16:09:19.496Z - normal: Compiled project javascript file successfully
+2018-06-24T16:09:19.497Z - normal: Start building assets
+2018-06-24T16:09:19.497Z - normal: Start spawn build-worker
+2018-06-24T16:09:20.593Z - normal: Finish spawn build-worker
+2018-06-24T16:09:20.593Z - normal: Start init build-worker
+2018-06-24T16:09:23.572Z - normal: 1.6.0
+2018-06-24T16:09:23.751Z - normal: Finish init build-worker
+2018-06-24T16:09:23.751Z - normal: Start build-assets in worker
+2018-06-24T16:09:24.094Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T16:09:24.466Z - normal: Finish build-assets in worker
+2018-06-24T16:09:24.472Z - normal: Finish building assets
+2018-06-24T16:09:24.500Z - normal: Start building raw assets
+2018-06-24T16:09:24.500Z - normal: Start building plugin scripts
+2018-06-24T16:09:24.605Z - normal: Finish building raw assets
+2018-06-24T16:09:24.609Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T16:09:24.698Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T16:09:32.119Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T16:09:32.119Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T16:09:32.552Z - normal: Initializing...
+
+2018-06-24T16:09:32.560Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T16:09:32.579Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T16:09:32.580Z - normal: initialization finished
+
+2018-06-24T16:09:32.731Z - normal: open IDE success
+
+2018-06-24T16:10:56.881Z - error: TypeError: Cannot read property 'node' of null
     at initializer.parent (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:1156:19)
     at HTMLImageElement.img.onload (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/svg.js/dist/svg.js:3508:22)
-2018-06-11T02:26:08.806Z - normal: Introduced global variable while editing: i
-2018-06-11T02:26:08.809Z - normal: Introduced global variable while editing: l
-2018-06-11T02:26:08.978Z - warn: Can not serialize 'CCClass.userInfo' because the specified type is anonymous, please provide a class name or set the 'serializable' attribute of 'CCClass.userInfo' to 'false'.
+2018-06-24T16:11:18.409Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "/Users/workspace/crazy-games/twenty/build",
+  "debug": false,
+  "dest": "/Users/workspace/crazy-games/twenty/build/wechatgame",
+  "encryptJs": true,
+  "excludeScenes": [
+    "73f2cef8-c2bf-4cc2-96ce-8dd6aec11108"
+  ],
+  "excludedModules": [
+    "ScrollView"
+  ],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+    "cc76203b-87f5-4a97-b925-1ece5c3b1370"
+  ],
+  "sourceMaps": false,
+  "startScene": "630652b0-8744-4e3d-a2c0-3205f483d1ab",
+  "template": "link",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wxd92ea258dd403d46",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "hortor-wxfriend-sub"
+  },
+  "xxteaKey": "59f1b0b7-2e04-43",
+  "zipCompressJs": true,
+  "project": "/Users/workspace/crazy-games/twenty",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2018-06-24T16:11:18.422Z - normal: Building /Users/workspace/crazy-games/twenty
+2018-06-24T16:11:18.422Z - normal: Destination /Users/workspace/crazy-games/twenty/build/wechatgame
+2018-06-24T16:11:18.424Z - normal: Delete /Users/workspace/crazy-games/twenty/build/wechatgame/**/*
+2018-06-24T16:11:23.144Z - normal: Compiled project javascript file successfully
+2018-06-24T16:11:23.145Z - normal: Start building assets
+2018-06-24T16:11:23.145Z - normal: Start spawn build-worker
+2018-06-24T16:11:24.064Z - normal: Finish spawn build-worker
+2018-06-24T16:11:24.064Z - normal: Start init build-worker
+2018-06-24T16:11:26.992Z - normal: 1.6.0
+2018-06-24T16:11:27.196Z - normal: Finish init build-worker
+2018-06-24T16:11:27.196Z - normal: Start build-assets in worker
+2018-06-24T16:11:27.523Z - warn: Can not find particle texture in /Users/workspace/crazy-games/twenty/assets/particles/Untitled 1.png, plist: /Users/workspace/crazy-games/twenty/assets/particles/universe.plist
+2018-06-24T16:11:27.897Z - normal: Finish build-assets in worker
+2018-06-24T16:11:27.900Z - normal: Finish building assets
+2018-06-24T16:11:27.922Z - normal: Start building raw assets
+2018-06-24T16:11:27.923Z - normal: Start building plugin scripts
+2018-06-24T16:11:28.030Z - normal: Finish building raw assets
+2018-06-24T16:11:28.034Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2018-06-24T16:11:28.120Z - normal: Built to "/Users/workspace/crazy-games/twenty/build/wechatgame" successfully
+2018-06-24T16:11:29.462Z - warn: 找不到微信开发程序版本信息路径 [/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/package.json]。
+2018-06-24T16:11:29.463Z - warn: 微信开发程序版本过低，不能享用所有功能，请尽快升级。
+2018-06-24T16:11:30.113Z - normal: Initializing...
+
+2018-06-24T16:11:30.126Z - normal: idePortFile: /Users/Joker/Library/Application Support/微信web开发者工具/Default/.ide
+
+2018-06-24T16:11:30.154Z - normal: IDE server has started, listening on http://127.0.0.1:52914
+
+2018-06-24T16:11:30.155Z - normal: initialization finished
+
+2018-06-24T16:11:30.298Z - normal: open IDE success
+

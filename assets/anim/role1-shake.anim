@@ -3,7 +3,7 @@
   "_name": "role1-shake",
   "_objFlags": 0,
   "_rawFiles": null,
-  "_duration": 3,
+  "_duration": 2,
   "sample": 60,
   "speed": 1,
   "wrapMode": 22,
@@ -13,15 +13,15 @@
         {
           "frame": 0,
           "value": [
-            50,
-            10
+            495,
+            0
           ]
         },
         {
-          "frame": 3,
+          "frame": 2,
           "value": [
-            60,
-            20
+            485,
+            10
           ]
         }
       ]

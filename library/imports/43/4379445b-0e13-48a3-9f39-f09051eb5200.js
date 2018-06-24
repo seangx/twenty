@@ -6,12 +6,27 @@ cc._RF.push(module, '43794RbDhNIo5858JBR61IA', 'game-manager');
 
 var _consts = require("consts");
 
+var _platform = require("./platform/platform");
+
+var _platform2 = _interopRequireDefault(_platform);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Learn cc.Class:
+//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/class.html
+//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/class.html
+// Learn Attribute:
+//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/reference/attributes.html
+//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/reference/attributes.html
+// Learn life-cycle callbacks:
+//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
+//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 var GameManager = cc.Class({
 
   properties: {
     rowCount: 8,
     columnCount: 7,
-    space: 15,
+    space: 5,
 
     cubes: [],
     columnPositions: [],
@@ -24,30 +39,55 @@ var GameManager = cc.Class({
     halfHeight: 0,
 
     maxLevel: 0,
+    maxHistory: 0,
     leftTime: 10,
     newLineTime: 10,
-    isPause: 0,
 
-    mainNode: cc.Node
+    mainNode: cc.Node,
+
+    state: {
+      default: _consts.GameState.Idle,
+      type: _consts.GameState
+    }
   },
 
-  init: function init(prefabs, mainNode, auSource) {
-    this.mainNode = mainNode;
-    this.gameNode_ = cc.find("/Canvas/game-node", cc.director.getRunningScene());
-    this.cubePrefabs = prefabs;
-
-    this.halfWidth = this.gameNode_.width / 2;
-    this.halfHeight = this.gameNode_.height / 2;
-
-    this.cubeTemplate = cc.instantiate(this.cubePrefabs[0]);
-
-    this.au_ = auSource;
-
-    this.reset();
-    if (this.maxLevel <= 0) {
-      this.showStarDes(this.maxLevel);
+  setState: function setState(state) {
+    if (this.state === state) {
+      return;
     }
-    cc.log("game manager init");
+    this.state = state;
+  },
+  init: function init(prefabs, mainNode, auSource) {
+    _platform2.default.instance.getStorage("maxLevel", function (maxLevel) {
+      var _this = this;
+
+      this.mainNode = mainNode;
+      this.gameNode_ = mainNode.getChildByName("game-node");
+      this.cubePrefabs = prefabs;
+
+      this.halfWidth = this.gameNode_.width / 2;
+      this.halfHeight = this.gameNode_.height / 2;
+
+      this.cubeTemplate = cc.instantiate(this.cubePrefabs[0]);
+
+      this.au_ = auSource;
+
+      this.reset();
+      this.maxLevel = 0;
+      if (maxLevel) {
+        this.maxHistory = parseInt(maxLevel);
+      }
+
+      if (this.maxLevel <= 0) {
+        this.showStarDes(this.maxLevel);
+      }
+
+      _platform2.default.instance.onHide(function () {
+        _this.setState(_consts.GameState.Pause);
+      });
+
+      cc.log("game manager init");
+    }.bind(this));
   },
   restart: function restart() {
     this.reset();
@@ -56,7 +96,7 @@ var GameManager = cc.Class({
   reset: function reset() {
     this.clear();
 
-    this.isPause = false;
+    this.setState(_consts.GameState.Running);
     this.leftTime = this.newLineTime;
     this.maxLevel = 0;
     this.initCubes();
@@ -157,6 +197,7 @@ var GameManager = cc.Class({
     this.gameNode_.emit(cc.Node.EventType.TOUCH_END);
     cube.removeFromParent();
     var cubeCom = cube.getComponent("cube");
+
     this.cubes[cubeCom.cell.row][cubeCom.cell.column] = null;
   },
 
@@ -200,11 +241,28 @@ var GameManager = cc.Class({
     if (level > this.maxLevel) {
       this.maxLevel = level;
       this.showStarDes(this.maxLevel);
+      if (this.maxLevel > this.maxHistory) {
+        this.maxHistory = this.maxLevel;
+        _platform2.default.instance.setStorage("maxLevel", this.maxLevel.toString());
+        _platform2.default.instance.submitScore(dataManager.userInfo.userId3, this.maxLevel);
+      }
+      cc.game.emit("max-level-changed");
+    }
+  },
+  savePlayerData: function savePlayerData() {
+    if (cc.sys.platform === cc.sys.WECHAT_GAME) {
+      wx.setStorage({
+        key: "maxLevel",
+        data: this.maxLevel.toString(),
+        success: function success() {
+          console.log("save level success");
+        }
+      });
     }
   },
   update: function update(dt) {
     // this.checkFallingDownPosition();
-    if (this.isPause) {
+    if (this.state !== _consts.GameState.Running) {
       return;
     }
     this.leftTime -= dt;
@@ -223,10 +281,13 @@ var GameManager = cc.Class({
     return false;
   },
   addNewLine: function addNewLine() {
+    var _this2 = this;
+
     if (this.isDead()) {
       this.gameOver();
       return;
     }
+    this.setState(_consts.GameState.AddNewLine);
     cc.game.emit("add-new-line");
     for (var i = 0; i < this.cubes.length; i++) {
       var row = this.cubes[i];
@@ -243,56 +304,56 @@ var GameManager = cc.Class({
       }
     }
 
-    for (var _i2 = 0; _i2 < this.columnCount; _i2++) {
-      var _cube = this.createCube({ row: 0, column: _i2 });
-      _cube.y = -_cube.height / 2;
-      this.cubes[0][_i2] = _cube;
-      // cube.emit("move-up");
-    }
+    //避免新旧碰撞，延迟加载新0星球
+    setTimeout(function () {
+      if (_this2.state != _consts.GameState.AddNewLine) {
+        return;
+      }
+      _this2.setState(_consts.GameState.Running);
+      for (var _i2 = 0; _i2 < _this2.columnCount; _i2++) {
+        var _cube = _this2.createCube({ row: 0, column: _i2 });
+        // cube.y=-cube.height/2;
+        _this2.cubes[0][_i2] = _cube;
+        // cube.emit("move-up");
+      }
+    }, 150);
   },
   gameOver: function gameOver() {
-    this.isPause = true;
+    this.setState(_consts.GameState.Over);
+    cc.game.emit("game-over");
     this.mainNode.getComponent(cc.Animation).play("game-over");
   },
   createCube: function createCube(cell) {
     var cube = cc.instantiate(this.cubePrefabs[0]);
-    cube.getComponent("cube").init(cell, this.randLevel());
     cube.x = this.space + cube.width / 2 + (cube.width + this.space) * cell.column;
     cube.y = this.space + cube.height / 2 + (cube.height + this.space) * cell.row;
     cube.parent = this.gameNode_;
+    cube.getComponent("cube").init(cell, this.randLevel());
     return cube;
   },
   playBombSound: function playBombSound() {
     this.au_.play();
   },
   showStarDes: function showStarDes(index) {
-    var node = cc.find("star-description");
-    if (!node) {
-      cc.warn("star-description is not find");
-      return;
-    }
-    node.getComponent(node.name).init(index);
-    node.active = true;
+    // let node=cc.find("star-description");
+    // if (!node){
+    //   cc.warn("star-description is not find");
+    //   return;
+    // }
+    //
+    // node.getComponent(node.name).init(index);
+    // node.active=true;
   },
   hideStarDes: function hideStarDes(index) {
-    var node = cc.find("star-description");
-    if (!node) {
-      cc.warn("star-description is not find");
-      return;
-    }
-    // node.getComponent(node.name).init(index);
-    node.active = false;
+    // let node=cc.find("star-description");
+    // if (!node){
+    //   cc.warn("star-description is not find");
+    //   return;
+    // }
+    // // node.getComponent(node.name).init(index);
+    // node.active=false;
   }
-}); // Learn cc.Class:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/class.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/class.html
-// Learn Attribute:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/reference/attributes.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
-
+});
 
 window.gameManager = new GameManager();
 

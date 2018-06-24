@@ -1,0 +1,55 @@
+
+match1.png
+size: 1024,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+star_a_1
+  rotate: false
+  xy: 126, 2
+  size: 122, 115
+  orig: 122, 115
+  offset: 0, 0
+  index: -1
+star_a_2
+  rotate: false
+  xy: 250, 2
+  size: 122, 115
+  orig: 122, 115
+  offset: 0, 0
+  index: -1
+star_a_3
+  rotate: false
+  xy: 374, 2
+  size: 122, 115
+  orig: 122, 115
+  offset: 0, 0
+  index: -1
+star_a_4
+  rotate: false
+  xy: 498, 2
+  size: 122, 115
+  orig: 122, 115
+  offset: 0, 0
+  index: -1
+star_a_5
+  rotate: false
+  xy: 622, 2
+  size: 122, 115
+  orig: 122, 115
+  offset: 0, 0
+  index: -1
+star_a_6
+  rotate: false
+  xy: 746, 2
+  size: 122, 115
+  orig: 122, 115
+  offset: 0, 0
+  index: -1
+star_a_7
+  rotate: false
+  xy: 2, 2
+  size: 122, 115
+  orig: 122, 115
+  offset: 0, 0
+  index: -1

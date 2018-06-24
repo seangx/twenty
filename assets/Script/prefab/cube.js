@@ -8,19 +8,22 @@
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 // import {CubeState} from './color-cube';
-import {CubeState} from "../consts";
+import {CubeState,StarTypes,GameState} from "../consts";
+import Star from "./star.js";
+
 cc.Class({
   extends: cc.Component,
 
   properties: {
-    level: 0,
     state:{
       default:CubeState.Normal,
       type:CubeState
     },
     cell:cc.p(0,0),
-    levelFrames:[cc.SpriteFrame],
-    background:cc.Sprite,
+    star:{
+      default:null,
+      type:Star
+    },
     levelUpAnimation:cc.Prefab
   },
 
@@ -57,27 +60,16 @@ cc.Class({
   // },
 
   onLevelUp(){
-    this.level++;
-    gameManager.levelChange(this.level);
-    this.safeChangeLevelFrame();
+    this.star.levelUp();
+    gameManager.levelChange(this.star.starType);
     // gameManager.playDeadAction(this.node.position);
     this.playLevelUpAnimation();
     gameManager.playBombSound();
   },
 
-  safeChangeLevelFrame(){
-    cc.log("safe change sprite frame,level:",this.level.toString());
-    // if (this.level>=this.levelFrames.length){
-    //   this.level=this.levelFrames.length-1;
-    // }
-    this.background.spriteFrame=this.levelFrames[Math.min(this.level,this.levelFrames.length-1)];
-  },
-
-  init(cell,level) {
+  init(cell,starType) {
     this.cell=cell;
-    this.level=level;
-    // this.
-    this.safeChangeLevelFrame();
+    this.star.setStarType(starType);
     // this.setState(CubeState.Block);
   },
 
@@ -90,7 +82,7 @@ cc.Class({
   },
 
   setState(state) {
-    cc.log(cc.js.formatStr("set state,old:%d,new:%d,pos:%v",this.state,state,this.cell));
+    cc.log(cc.js.formatStr("set state,old:%d,new:%d,pos:%s",this.state,state,JSON.stringify(this.cell)));
     if (this.state===CubeState.Bombing){
       cc.error("cube is marking dead");
       return;
@@ -123,7 +115,7 @@ cc.Class({
     switch (this.state){
       case CubeState.Bombing:{
         gameManager.removeCube(this.node);
-        break;
+        return;
       }
       case CubeState.TouchMove:{
         this.fitCell();
@@ -194,7 +186,7 @@ cc.Class({
   },
 
   checkBombing(cube1,cube2){
-    if (cube1.level !== cube2.level) {
+    if (cube1.star.starType!== cube2.star.starType) {
       return false;
     }
 
@@ -210,7 +202,7 @@ cc.Class({
 
   //仅动态类型才处理碰撞
   onBeginContact: function (contact, selfCollider, otherCollider) {
-    if (selfCollider.body.type===cc.RigidBodyType.Static){
+    if (selfCollider.body.type===cc.RigidBodyType.Static||gameManager.state===GameState.AddNewLine){
       return;
     }
 
@@ -258,7 +250,7 @@ cc.Class({
   },
 
   checkFallingDown(){
-    if (this.cell.row<=0){
+    if (this.cell.row<=0||gameManager.state!==GameState.Running){
       return;
     }
     let downCube=gameManager.getCube(this.cell.row-1,this.cell.column);
