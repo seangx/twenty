@@ -71,7 +71,7 @@ cc.Class({
     _platform2.default.instance.displayFriendRankList(dataManager.userInfo.userId3);
   },
   onMaxLevelChanged: function onMaxLevelChanged() {
-    this.starDes.active = true;
+    // this.starDes.active=true;
     this.labelNewStar.string = cc.js.formatStr("发现新星球:%s", configManager.getStarConfigByIndex(gameManager.maxLevel).name);
     this.getComponent(cc.Animation).play("show-new-star-tip");
     for (var i in this.starsForProgress) {
@@ -83,7 +83,7 @@ cc.Class({
           this.x = 435;
           this.getComponent("star").setStarType(gameManager.maxLevel + 4); //为超出屏幕的星星设置纹理
         }
-        if (this.x <= 0) {
+        if (this.x <= 5) {
           this.getComponent("star").unDark();
           if (this.x > -110) {
             this.scale = 1.05;

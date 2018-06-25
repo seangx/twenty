@@ -43,6 +43,15 @@ var GameManager=cc.Class({
     if(this.state===state){
       return;
     }
+    switch (state){
+      case GameState.AddNewLine:{
+        // cc.director.getPhysicsManager().enabled=false;
+        break;
+      }
+      case GameState.Running:{
+        // cc.director.getPhysicsManager().enabled=true;
+      }
+    }
     this.state=state;
   },
 
@@ -127,10 +136,10 @@ var GameManager=cc.Class({
         if (this.columnPositions.length<this.columnCount){
           this.columnPositions.push(this.space+this.cubeTemplate.width/2+(this.cubeTemplate.width+this.space)*j);
         }
-        //cube的y坐标
-        if (this.rowPositions.length<this.rowCount){
-          this.rowPositions.push(this.space+this.cubeTemplate.height/2+(this.cubeTemplate.height+this.space)*j);
-        }
+      }
+      //cube的y坐标
+      if (this.rowPositions.length<this.rowCount){
+        this.rowPositions.push(this.space+this.cubeTemplate.height/2+(this.cubeTemplate.height+this.space)*i);
       }
       this.cubes.push(tmp);
     }
@@ -195,21 +204,27 @@ var GameManager=cc.Class({
     cube.removeFromParent();
     let cubeCom=cube.getComponent("cube");
 
-    this.cubes[cubeCom.cell.row][cubeCom.cell.column]=null;
-
+    if(this.cubes[cubeCom.cell.row][cubeCom.cell.column]===cube){
+      this.cubes[cubeCom.cell.row][cubeCom.cell.column]=null;
+    }
   },
 
   //移动数组位置到显示位置
   cubeMoved(cube){
     cc.log("cube moved");
     let cell=this.posToPoint(cube.position);
-    if (this.cubes[cell.row][this.column]){
-      cc.error("can not move cube");
-      return;
-    }
+    // if (this.cubes[cell.row][cell.column]){
+    //   cc.error("can not move cube");
+    //   return;
+    // }
+
     let cubeCom=cube.getComponent("cube");
     let oldCell=cubeCom.cell;
+    if (cell.row===oldCell.row&&cell.column===oldCell.column){
+      return;
+    }
     if (this.cubes[oldCell.row][oldCell.column]===cube){  //删除旧位置信息
+      cc.log("remove old cube,cell:",JSON.stringify(oldCell));
       this.cubes[oldCell.row][oldCell.column]=null;
     }
     // else if(this.cubes[oldCell.row][oldCell.column]&&this.cubes[oldCell.row][oldCell.column]!==cube){//当前位置已存在
@@ -239,11 +254,11 @@ var GameManager=cc.Class({
   levelChange(level){
     if (level>this.maxLevel){
       this.maxLevel=level;
+      Platform.instance.submitScore(dataManager.userInfo.userId3,this.maxLevel);
       this.showStarDes(this.maxLevel);
       if (this.maxLevel>this.maxHistory){
         this.maxHistory=this.maxLevel;
         Platform.instance.setStorage("maxLevel",this.maxLevel.toString());
-        Platform.instance.submitScore(dataManager.userInfo.userId3,this.maxLevel);
       }
       cc.game.emit("max-level-changed");
     }
@@ -297,9 +312,10 @@ var GameManager=cc.Class({
         if (!cube){
           continue;
         }
-        // if (cube.getComponent("cube").state!==CubeState.Normal){
-        //   continue;
-        // }
+        if (cube.getComponent("cube").state===CubeState.Bombing){
+          this.removeCube(cube);
+          continue;
+        }
         cube.emit("move-up");
         // this.cubes[i][j]=null;
       }
@@ -317,7 +333,7 @@ var GameManager=cc.Class({
         this.cubes[0][i]=cube;
         // cube.emit("move-up");
       }
-    },150);
+    },180);
   },
   gameOver(){
     this.setState(GameState.Over);

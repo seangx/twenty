@@ -36,7 +36,6 @@ var StarTypes = cc.Enum({
   "Venus": -1,
   "Mercury": -1,
   "mingwangx": -1,
-  "sun": -1,
   "s9": -1,
   "s10": -1,
   "s11": -1,

@@ -55,6 +55,17 @@ var GameManager = cc.Class({
     if (this.state === state) {
       return;
     }
+    switch (state) {
+      case _consts.GameState.AddNewLine:
+        {
+          // cc.director.getPhysicsManager().enabled=false;
+          break;
+        }
+      case _consts.GameState.Running:
+        {
+          // cc.director.getPhysicsManager().enabled=true;
+        }
+    }
     this.state = state;
   },
   init: function init(prefabs, mainNode, auSource) {
@@ -133,10 +144,10 @@ var GameManager = cc.Class({
         if (this.columnPositions.length < this.columnCount) {
           this.columnPositions.push(this.space + this.cubeTemplate.width / 2 + (this.cubeTemplate.width + this.space) * j);
         }
-        //cube的y坐标
-        if (this.rowPositions.length < this.rowCount) {
-          this.rowPositions.push(this.space + this.cubeTemplate.height / 2 + (this.cubeTemplate.height + this.space) * j);
-        }
+      }
+      //cube的y坐标
+      if (this.rowPositions.length < this.rowCount) {
+        this.rowPositions.push(this.space + this.cubeTemplate.height / 2 + (this.cubeTemplate.height + this.space) * i);
       }
       this.cubes.push(tmp);
     }
@@ -198,7 +209,9 @@ var GameManager = cc.Class({
     cube.removeFromParent();
     var cubeCom = cube.getComponent("cube");
 
-    this.cubes[cubeCom.cell.row][cubeCom.cell.column] = null;
+    if (this.cubes[cubeCom.cell.row][cubeCom.cell.column] === cube) {
+      this.cubes[cubeCom.cell.row][cubeCom.cell.column] = null;
+    }
   },
 
 
@@ -206,14 +219,19 @@ var GameManager = cc.Class({
   cubeMoved: function cubeMoved(cube) {
     cc.log("cube moved");
     var cell = this.posToPoint(cube.position);
-    if (this.cubes[cell.row][this.column]) {
-      cc.error("can not move cube");
-      return;
-    }
+    // if (this.cubes[cell.row][cell.column]){
+    //   cc.error("can not move cube");
+    //   return;
+    // }
+
     var cubeCom = cube.getComponent("cube");
     var oldCell = cubeCom.cell;
+    if (cell.row === oldCell.row && cell.column === oldCell.column) {
+      return;
+    }
     if (this.cubes[oldCell.row][oldCell.column] === cube) {
       //删除旧位置信息
+      cc.log("remove old cube,cell:", JSON.stringify(oldCell));
       this.cubes[oldCell.row][oldCell.column] = null;
     }
     // else if(this.cubes[oldCell.row][oldCell.column]&&this.cubes[oldCell.row][oldCell.column]!==cube){//当前位置已存在
@@ -240,11 +258,11 @@ var GameManager = cc.Class({
   levelChange: function levelChange(level) {
     if (level > this.maxLevel) {
       this.maxLevel = level;
+      _platform2.default.instance.submitScore(dataManager.userInfo.userId3, this.maxLevel);
       this.showStarDes(this.maxLevel);
       if (this.maxLevel > this.maxHistory) {
         this.maxHistory = this.maxLevel;
         _platform2.default.instance.setStorage("maxLevel", this.maxLevel.toString());
-        _platform2.default.instance.submitScore(dataManager.userInfo.userId3, this.maxLevel);
       }
       cc.game.emit("max-level-changed");
     }
@@ -296,9 +314,10 @@ var GameManager = cc.Class({
         if (!cube) {
           continue;
         }
-        // if (cube.getComponent("cube").state!==CubeState.Normal){
-        //   continue;
-        // }
+        if (cube.getComponent("cube").state === _consts.CubeState.Bombing) {
+          this.removeCube(cube);
+          continue;
+        }
         cube.emit("move-up");
         // this.cubes[i][j]=null;
       }
@@ -316,7 +335,7 @@ var GameManager = cc.Class({
         _this2.cubes[0][_i2] = _cube;
         // cube.emit("move-up");
       }
-    }, 150);
+    }, 180);
   },
   gameOver: function gameOver() {
     this.setState(_consts.GameState.Over);

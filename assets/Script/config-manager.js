@@ -55,7 +55,13 @@ var ConfigManager=cc.Class({
         "diameter":4875,
         "des":"开除星籍在家待业摸鱼典范"
       },
-      "sun":{
+      "Sun":{
+        "name":"太阳",
+        "radius":1082000000,
+        "diameter":12140,
+        "des":"赞美太阳！！！"
+      },
+      "Mercury":{
         "name":"水星",
         "radius":579000000,
         "diameter":4875,
@@ -234,7 +240,6 @@ var ConfigManager=cc.Class({
       "Venus",
       "Mercury",
       "mingwangx",
-      "sun",
       "s9",
       "s10",
       "s11",

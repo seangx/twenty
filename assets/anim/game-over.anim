@@ -26,11 +26,6 @@
             }
           ]
         }
-      },
-      "game-node/label-tip": {
-        "props": {
-          "scale": []
-        }
       }
     }
   },

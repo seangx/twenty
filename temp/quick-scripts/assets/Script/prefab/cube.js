@@ -82,6 +82,7 @@ cc.Class({
   init: function init(cell, starType) {
     this.cell = cell;
     this.star.setStarType(starType);
+    this.disablePhysics();
     // this.setState(CubeState.Block);
   },
   start: function start() {},
@@ -101,6 +102,8 @@ cc.Class({
       case _consts.CubeState.Normal:
         {
           this.disablePhysics();
+          this.resetY();
+          this.resetX();
           gameManager.cubeMoved(this.node);
           break;
         }
@@ -122,6 +125,7 @@ cc.Class({
     this.state = state;
   },
   update: function update(dt) {
+    //添加新行时暂停下落
     switch (this.state) {
       case _consts.CubeState.Bombing:
         {
@@ -223,6 +227,7 @@ cc.Class({
     if (this.checkBombing(cubeSelf, cubeOther)) {
       cubeSelf.setState(_consts.CubeState.Bombing);
       cubeOther.node.emit("level-up");
+      return;
     }
 
     if (cubeSelf.state === _consts.CubeState.FallingDown) {
@@ -235,6 +240,7 @@ cc.Class({
     cc.log("reset y called");
     var cell = gameManager.posToPoint(this.node.position);
     this.node.y = gameManager.rowPositions[cell.row];
+    cc.log("reset y,new y:" + this.node.y.toString());
   },
   resetX: function resetX() {
     //更新cube的x坐标
@@ -270,9 +276,9 @@ cc.Class({
       return;
     }
     this.setState(_consts.CubeState.Block);
+    this.disablePhysics();
     var moveTo = cc.moveTo(0.2, cc.pAdd(this.node.position, cc.p(0, this.node.height + gameManager.space)));
     this.node.runAction(cc.sequence(moveTo, cc.callFunc(function () {
-      gameManager.cubeMoved(_this2.node);
       _this2.setState(_consts.CubeState.Normal);
     })));
   },
