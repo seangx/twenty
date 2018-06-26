@@ -94,7 +94,9 @@ var GameManager = cc.Class({
       }
 
       _platform2.default.instance.onHide(function () {
-        _this.setState(_consts.GameState.Pause);
+        if (_this.state !== _consts.GameState.Over || _this.state !== _consts.GameState.Pause) {
+          _this.setState(_consts.GameState.Pause);
+        }
       });
 
       cc.log("game manager init");

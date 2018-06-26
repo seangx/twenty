@@ -39,7 +39,7 @@ export default class WXPlatform extends PlatformInterface {
       }, fail: ()=> {
         cb("0");
       }
-    });
+     });
   }
 
   public submitScore(openid, score, cb) {
@@ -120,9 +120,9 @@ export default class WXPlatform extends PlatformInterface {
       console.log("login button url=", buttonImageUrl);
 
       let button = sdk.getGetUserInfoBtn({
-        type: 'text',
-        text: '获取用户信息',
-        // image: buttonImageUrl,
+        type: 'image',
+        // text: '获取用户信息',
+        image: buttonImageUrl,
         style: {
           left: sys.windowWidth / 2 - Math.round(buttonRealWidth / 2),
           top: top,
@@ -140,7 +140,6 @@ export default class WXPlatform extends PlatformInterface {
           console.log("login success, data=", JSON.stringify(data));
           // 隐藏 button
           button.hide();
-          cb(null, data);
         }
       });
     })

@@ -794,8 +794,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 161.18,
-      "height": 47.06
+      "width": 202.35,
+      "height": 40
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -803,7 +803,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 46,
+      "x": 29,
       "y": -2
     },
     "_skewX": 0,
@@ -824,14 +824,14 @@
     "_useOriginalSize": false,
     "_actualFontSize": 40,
     "_fontSize": 40,
-    "_lineHeight": 40,
+    "_lineHeight": 34,
     "_enableWrapText": true,
     "_N$file": {
       "__uuid__": "f6c33a75-65ea-4d86-a345-58a510989665"
     },
     "_isSystemFontUsed": false,
     "_spacingX": 0,
-    "_N$string": "分数:137",
+    "_N$string": "分数：137",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
@@ -952,8 +952,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 150.59,
-      "height": 47.06
+      "width": 191.76,
+      "height": 40
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -961,7 +961,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 38,
+      "x": 33,
       "y": -3
     },
     "_skewX": 0,
@@ -982,14 +982,14 @@
     "_useOriginalSize": false,
     "_actualFontSize": 40,
     "_fontSize": 40,
-    "_lineHeight": 40,
+    "_lineHeight": 34,
     "_enableWrapText": true,
     "_N$file": {
       "__uuid__": "f6c33a75-65ea-4d86-a345-58a510989665"
     },
     "_isSystemFontUsed": false,
     "_spacingX": 0,
-    "_N$string": "最高:20",
+    "_N$string": "最高：20",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",

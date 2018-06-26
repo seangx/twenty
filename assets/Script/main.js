@@ -97,8 +97,8 @@ cc.Class({
     gameManager.update(dt);
 
     this.progressTime.progress=gameManager.leftTime/gameManager.newLineTime;
-    this.labelCurrentMax.string="分数:"+(gameManager.maxLevel+1).toString();
-    this.labelTopHistory.string="最高:"+(gameManager.maxHistory+1).toString();
+    this.labelCurrentMax.string="分数："+(gameManager.maxLevel+1).toString();
+    this.labelTopHistory.string="最高："+(gameManager.maxHistory+1).toString();
 
     if (gameManager.state===GameState.Pause){
       this.gamePauseNode.active=true;

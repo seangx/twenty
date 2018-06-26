@@ -79,7 +79,9 @@ var GameManager=cc.Class({
       }
 
       Platform.instance.onHide(()=>{
-        this.setState(GameState.Pause);
+        if(this.state!==GameState.Over||this.state!==GameState.Pause){
+          this.setState(GameState.Pause);
+        }
       });
 
       cc.log("game manager init");

@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 139,
-      "y": 32,
-      "width": 1440,
-      "height": 877,
+      "x": 0,
+      "y": 23,
+      "width": 2048,
+      "height": 1061,
       "layout": {
         "children": [
           {
@@ -18,7 +18,7 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 391.984375,
+                "height": 359.953125,
                 "type": "panel",
                 "width": 311
               },
@@ -27,12 +27,12 @@
                 "children": [
                   "assets"
                 ],
-                "height": 391,
+                "height": 359.03125,
                 "type": "panel",
                 "width": 311
               }
             ],
-            "height": 786,
+            "height": 722,
             "type": "dock-v",
             "width": 311
           },
@@ -43,7 +43,7 @@
                 "children": [
                   "scene"
                 ],
-                "height": 395,
+                "height": 362.71875,
                 "type": "panel",
                 "width": 615
               },
@@ -53,22 +53,21 @@
                   "console",
                   "timeline"
                 ],
-                "height": 388,
+                "height": 356.28125,
                 "type": "panel",
                 "width": 615
               }
             ],
-            "height": 786,
+            "height": 722,
             "type": "dock-v",
             "width": 615
           },
           {
             "active": 0,
             "children": [
-              "inspector",
-              "builder"
+              "inspector"
             ],
-            "height": 786,
+            "height": 722,
             "type": "panel",
             "width": 502
           }
@@ -78,7 +77,6 @@
       "panels": [
         "console",
         "inspector",
-        "builder",
         "hierarchy",
         "assets",
         "scene",
@@ -90,7 +88,7 @@
       "url": "unpack://static/window.html",
       "windowType": "dockable",
       "x": 795,
-      "y": 236,
+      "y": 308,
       "width": 584,
       "height": 548,
       "layout": {
@@ -110,12 +108,14 @@
       "panels": [
         "project-settings"
       ]
-    }
+    },
+    "window-1530036051764": {},
+    "worker": {}
   },
   "panels": {
     "project-settings": {
       "x": 795,
-      "y": 236,
+      "y": 308,
       "width": 584,
       "height": 548
     },
@@ -132,8 +132,8 @@
       "height": 548
     },
     "builder": {
-      "x": 399,
-      "y": 203,
+      "x": 888,
+      "y": 170,
       "width": 500,
       "height": 722
     }

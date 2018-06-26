@@ -19,17 +19,22 @@ cc.Class({
 
   start () {
     cc.log("init star-description layer");
+    this.resetStar();
     cc.game.on("max-level-changed",this.onMaxLevelChanged,this);
+  },
+
+  resetStar(){
+    let config = configManager.getStarConfigByIndex(gameManager.maxLevel);
+    this.labelName.string = cc.js.formatStr("%s", config.name);
+    this.labelDes.string=config.des;
+    this.star.getComponent("star").setStarType(gameManager.maxLevel);
   },
 
   onMaxLevelChanged(){
     if(!this.star){
       return;
     }
-    let config = configManager.getStarConfigByIndex(gameManager.maxLevel);
-    this.labelName.string = cc.js.formatStr("%s", config.name);
-    this.labelDes.string=config.des;
-    this.star.getComponent("star").setStarType(gameManager.maxLevel);
+    this.resetStar();
   },
 
 
