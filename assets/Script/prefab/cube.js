@@ -24,12 +24,13 @@ cc.Class({
       default:null,
       type:Star
     },
-    levelUpAnimation:cc.Prefab
+    levelUpAnimation:cc.Prefab,
+    id:0,
   },
 
   // LIFE-CYCLE CALLBACKS:
 
-  onLoad() {
+  onEnable() {
     this.node.on(cc.Node.EventType.TOUCH_START,this.onTouchStart,this);
     this.node.on(cc.Node.EventType.TOUCH_MOVE,this.onTouchMove,this);
     // this.gameNode = cc.find("/Canvas/game-node", cc.director.getRunningScene());
@@ -40,15 +41,20 @@ cc.Class({
 
     this.node.on("move-up",this.onMoveUp,this);
 
-    cc.game.on("add-new-line",()=>{
-      if (!this.isTouched()||this.cell.row>0){
-        return;
-      }
-      let moveTo=cc.moveTo(0.2,cc.pAdd(this.node.position,cc.p(0,this.node.height+gameManager.space)));
-      this.node.runAction(moveTo);
-    });
-
     this.touchStartPos=cc.p(0,0);
+  },
+
+  onDisable(){
+    this.node.off(cc.Node.EventType.TOUCH_START,this.onTouchStart,this);
+    this.node.off(cc.Node.EventType.TOUCH_MOVE,this.onTouchMove,this);
+    // this.gameNode = cc.find("/Canvas/game-node", cc.director.getRunningScene());
+    this.node.off(cc.Node.EventType.TOUCH_CANCEL,this.onTouchEnd,this);
+    this.node.off(cc.Node.EventType.TOUCH_END,this.onTouchEnd,this);
+
+    this.node.off("level-up",this.onLevelUp,this);
+
+    this.node.off("move-up",this.onMoveUp,this);
+    this.setState(CubeState.Block);
   },
 
   isTouched(){
@@ -67,11 +73,13 @@ cc.Class({
     gameManager.playBombSound();
   },
 
-  init(cell,starType) {
+  init(cell,starType,id) {
     this.cell=cell;
     this.star.setStarType(starType);
     this.disablePhysics();
-    // this.setState(CubeState.Block);
+    this.id=id;
+    // this.state=CubeState.Normal;
+    this.setState(CubeState.Normal);
   },
 
   start() {
@@ -84,7 +92,7 @@ cc.Class({
 
   setState(state) {
     cc.log(cc.js.formatStr("set state,old:%d,new:%d,pos:%s",this.state,state,JSON.stringify(this.cell)));
-    if (this.state===CubeState.Bombing){
+    if (this.state===CubeState.Bombing&&state!==CubeState.Block){
       cc.error("cube is marking dead");
       return;
     }
@@ -146,6 +154,9 @@ cc.Class({
 
   onTouchStart(touch){
     cc.log("on touch start");
+    if(this.state===CubeState.AddNewLine){
+      return;
+    }
     this.setState(CubeState.Touched);
     // let body=this.node.getComponent(cc.RigidBody);
     // body.awake=true;
@@ -265,8 +276,21 @@ cc.Class({
     }
   },
 
+  moveTouchedCubeUp(){
+    this.disablePhysics();
+    let moveTo=cc.moveTo(0.2,cc.pAdd(this.node.position,cc.p(0,this.node.height+gameManager.space)));
+    this.node.runAction(cc.sequence(moveTo,cc.callFunc(()=>{
+      this.activePhysics();
+      this.setState(CubeState.Touched);
+    })));
+  },
+
   onMoveUp(){
     if (this.state===CubeState.Touched||this.state===CubeState.TouchMove){
+      if(this.cell.row===0){
+        this.moveTouchedCubeUp();
+        return;
+      }
       return;
     }
     this.setState(CubeState.Block);

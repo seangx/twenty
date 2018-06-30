@@ -16,7 +16,7 @@ cc.Class({
   extends: cc.Component,
 
   properties: {
-    cubePrefabs: [cc.Prefab],
+    cubePrefab: cc.Prefab,
     progressTime: cc.ProgressBar,
     labelCurrentMax: cc.Label,
     labelTopHistory: cc.Label,
@@ -36,7 +36,7 @@ cc.Class({
     // cc.view.enableAntiAlias(false);
 
     configManager.init();
-    gameManager.init(this.cubePrefabs, this.node, this.node.getComponent(cc.AudioSource));
+    gameManager.init(this.cubePrefab, this.node, this.node.getComponent(cc.AudioSource));
 
     // cc.game.addPersistRootNode(this.starDesNode);
 

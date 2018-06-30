@@ -24,15 +24,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var GameManager = cc.Class({
 
   properties: {
-    rowCount: 8,
-    columnCount: 7,
-    space: 5,
+    rowCount: 6,
+    columnCount: 6,
+    space: 4,
 
     cubes: [],
     columnPositions: [],
     rowPositions: [],
     cubeTemplate: cc.Node,
-    cubePrefabs: [],
+    cubePrefab: cc.Prefab,
     gameNode_: null,
 
     halfWidth: 0,
@@ -40,15 +40,17 @@ var GameManager = cc.Class({
 
     maxLevel: 0,
     maxHistory: 0,
-    leftTime: 10,
-    newLineTime: 10,
+    leftTime: 5,
+    newLineTime: 5,
 
     mainNode: cc.Node,
+    cubePool: cc.NodePool,
 
     state: {
       default: _consts.GameState.Idle,
       type: _consts.GameState
-    }
+    },
+    idGenerator: 1
   },
 
   setState: function setState(state) {
@@ -68,18 +70,24 @@ var GameManager = cc.Class({
     }
     this.state = state;
   },
-  init: function init(prefabs, mainNode, auSource) {
+  init: function init(cubePrefab, mainNode, auSource) {
     _platform2.default.instance.getStorage("maxLevel", function (maxLevel) {
       var _this = this;
 
       this.mainNode = mainNode;
       this.gameNode_ = mainNode.getChildByName("game-node");
-      this.cubePrefabs = prefabs;
+      this.cubePrefab = cubePrefab;
+      this.cubePool = new cc.NodePool();
+
+      for (var i = 0; i < (this.rowCount + 1) * this.columnCount; i++) {
+        var cube = cc.instantiate(cubePrefab);
+        this.cubePool.put(cube);
+      }
 
       this.halfWidth = this.gameNode_.width / 2;
       this.halfHeight = this.gameNode_.height / 2;
 
-      this.cubeTemplate = cc.instantiate(this.cubePrefabs[0]);
+      this.cubeTemplate = cc.instantiate(this.cubePrefab);
 
       this.au_ = auSource;
 
@@ -115,9 +123,11 @@ var GameManager = cc.Class({
     this.initCubes();
   },
   clear: function clear() {
+    var _this2 = this;
+
     this.foreachCubes(function (item, cell) {
       if (item) {
-        item.removeFromParent();
+        _this2.cubePool.put(item);
       }
     });
     // this.gameNode_.removeAllChildren(true);
@@ -129,11 +139,6 @@ var GameManager = cc.Class({
         cb(row[j], { row: i, column: j });
       }
     }
-  },
-  randColorCube: function randColorCube() {
-    var max = _consts.CubeColors.Blue + 1;
-    var color = Math.floor(Math.random() * 10) % max;
-    return cc.instantiate(this.cubePrefabs[color]);
   },
   initCubes: function initCubes() {
     this.cubes = [];
@@ -157,17 +162,6 @@ var GameManager = cc.Class({
     //初始化cube
     for (var _i = 0; _i < 2; _i++) {
       for (var _j = 0; _j < this.columnCount; _j++) {
-        var cube = this.randColorCube();
-        if (!cube) {
-          cc.error("init cube fail");
-          return;
-        }
-        cube.getComponent("cube").init({ row: _i, column: _j }, this.randLevel());
-        cube.x = this.space + cube.width / 2 + (cube.width + this.space) * _j;
-        cube.y = this.space + cube.height / 2 + (cube.height + this.space) * _i;
-
-        // cube.parent=this.gameNode_;
-
         this.cubes[_i][_j] = this.createCube({ row: _i, column: _j });
       }
     }
@@ -206,14 +200,20 @@ var GameManager = cc.Class({
     cc.warn("invalid touch position");
     return cell;
   },
+  isSameCube: function isSameCube(cube1, cube2) {
+    var com1 = cube1.getComponent("cube");
+    var com2 = cube2.getComponent("cube");
+    return com1.id === com2.id;
+  },
   removeCube: function removeCube(cube) {
+    cc.log("put cube back ,length:", this.cubePool.size());
     this.gameNode_.emit(cc.Node.EventType.TOUCH_END);
-    cube.removeFromParent();
     var cubeCom = cube.getComponent("cube");
 
-    if (this.cubes[cubeCom.cell.row][cubeCom.cell.column] === cube) {
+    if (this.isSameCube(this.cubes[cubeCom.cell.row][cubeCom.cell.column], cube)) {
       this.cubes[cubeCom.cell.row][cubeCom.cell.column] = null;
     }
+    this.cubePool.put(cube);
   },
 
 
@@ -228,10 +228,10 @@ var GameManager = cc.Class({
 
     var cubeCom = cube.getComponent("cube");
     var oldCell = cubeCom.cell;
-    if (cell.row === oldCell.row && cell.column === oldCell.column) {
+    if (cell.row === oldCell.row && cell.column === oldCell.column || !this.cubes[oldCell.row][oldCell.column]) {
       return;
     }
-    if (this.cubes[oldCell.row][oldCell.column] === cube) {
+    if (this.isSameCube(this.cubes[oldCell.row][oldCell.column], cube)) {
       //删除旧位置信息
       cc.log("remove old cube,cell:", JSON.stringify(oldCell));
       this.cubes[oldCell.row][oldCell.column] = null;
@@ -260,7 +260,9 @@ var GameManager = cc.Class({
   levelChange: function levelChange(level) {
     if (level > this.maxLevel) {
       this.maxLevel = level;
-      _platform2.default.instance.submitScore(dataManager.userInfo.userId3, this.maxLevel);
+      if (dataManager.userInfo) {
+        _platform2.default.instance.submitScore(dataManager.userInfo.userId3, this.maxLevel);
+      }
       this.showStarDes(this.maxLevel);
       if (this.maxLevel > this.maxHistory) {
         this.maxHistory = this.maxLevel;
@@ -301,14 +303,13 @@ var GameManager = cc.Class({
     return false;
   },
   addNewLine: function addNewLine() {
-    var _this2 = this;
+    var _this3 = this;
 
     if (this.isDead()) {
       this.gameOver();
       return;
     }
     this.setState(_consts.GameState.AddNewLine);
-    cc.game.emit("add-new-line");
     for (var i = 0; i < this.cubes.length; i++) {
       var row = this.cubes[i];
       for (var j = 0; j < row.length; j++) {
@@ -327,17 +328,17 @@ var GameManager = cc.Class({
 
     //避免新旧碰撞，延迟加载新0星球
     setTimeout(function () {
-      if (_this2.state != _consts.GameState.AddNewLine) {
+      if (_this3.state != _consts.GameState.AddNewLine) {
         return;
       }
-      _this2.setState(_consts.GameState.Running);
-      for (var _i2 = 0; _i2 < _this2.columnCount; _i2++) {
-        var _cube = _this2.createCube({ row: 0, column: _i2 });
+      _this3.setState(_consts.GameState.Running);
+      for (var _i2 = 0; _i2 < _this3.columnCount; _i2++) {
+        var _cube = _this3.createCube({ row: 0, column: _i2 });
         // cube.y=-cube.height/2;
-        _this2.cubes[0][_i2] = _cube;
+        _this3.cubes[0][_i2] = _cube;
         // cube.emit("move-up");
       }
-    }, 180);
+    }, 100);
   },
   gameOver: function gameOver() {
     this.setState(_consts.GameState.Over);
@@ -345,11 +346,18 @@ var GameManager = cc.Class({
     this.mainNode.getComponent(cc.Animation).play("game-over");
   },
   createCube: function createCube(cell) {
-    var cube = cc.instantiate(this.cubePrefabs[0]);
+    var cube = this.cubePool.get();
+    cc.log("get cube  from pool,length:", this.cubePool.size());
+    if (!cube) {
+      cc.error("over max cube pool");
+      return;
+    }
+    var id = this.idGenerator;
+    this.idGenerator++;
     cube.x = this.space + cube.width / 2 + (cube.width + this.space) * cell.column;
     cube.y = this.space + cube.height / 2 + (cube.height + this.space) * cell.row;
     cube.parent = this.gameNode_;
-    cube.getComponent("cube").init(cell, this.randLevel());
+    cube.getComponent("cube").init(cell, this.randLevel(), id);
     return cube;
   },
   playBombSound: function playBombSound() {

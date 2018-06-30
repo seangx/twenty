@@ -55,8 +55,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 90,
-      "height": 90
+      "width": 120,
+      "height": 120
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -109,8 +109,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 94,
-      "height": 94
+      "width": 120,
+      "height": 120
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -204,8 +204,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 94,
-      "height": 94
+      "width": 130,
+      "height": 130
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -258,8 +258,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 94,
-      "height": 94
+      "width": 130,
+      "height": 130
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -494,10 +494,11 @@
     },
     "levelUpAnimation": {
       "__uuid__": "9227de98-e324-4734-8e76-46cdeda5d6d4"
-    }
+    },
+    "id": 0
   },
   {
-    "__type__": "cc.PhysicsCircleCollider",
+    "__type__": "cc.PhysicsPolygonCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -515,7 +516,48 @@
       "x": 0,
       "y": 0
     },
-    "_radius": 45
+    "points": [
+      {
+        "__type__": "cc.Vec2",
+        "x": -50,
+        "y": -60
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 50,
+        "y": -60
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 60,
+        "y": -50
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 60,
+        "y": 50
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 50,
+        "y": 60
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": -50,
+        "y": 60
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": -60,
+        "y": 50
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": -60,
+        "y": -50
+      }
+    ]
   },
   {
     "__type__": "cc.PrefabInfo",
