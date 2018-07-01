@@ -40,8 +40,8 @@ var GameManager = cc.Class({
 
     maxLevel: 0,
     maxHistory: 0,
-    leftTime: 5,
-    newLineTime: 5,
+    leftTime: 8,
+    newLineTime: 8,
 
     mainNode: cc.Node,
     cubePool: cc.NodePool,
@@ -102,7 +102,7 @@ var GameManager = cc.Class({
       }
 
       _platform2.default.instance.onHide(function () {
-        if (_this.state !== _consts.GameState.Over || _this.state !== _consts.GameState.Pause) {
+        if (_this.state !== _consts.GameState.Over && _this.state !== _consts.GameState.Pause) {
           _this.setState(_consts.GameState.Pause);
         }
       });
@@ -183,21 +183,27 @@ var GameManager = cc.Class({
     return parseInt(Math.random() * 10) % this.maxLevel;
   },
   posToPoint: function posToPoint(pos) {
-    var cell = { row: 0, column: 0 };
+    var cell = { row: -1, column: -1 };
     for (var i = 0; i < this.rowCount; i++) {
-      if (pos.y > (i + 1) * (this.cubeTemplate.height + this.space)) {
-        continue;
+      if (pos.y < (i + 1) * (this.cubeTemplate.height + this.space)) {
+        cell.row = i;
+        break;
       }
-      cell.row = i;
-      for (var j = 0; j < this.columnCount; j++) {
-        if (pos.x < (j + 1) * (this.cubeTemplate.width + this.space)) {
-          cell.column = j;
-          return cell;
-        }
+    }
+    for (var j = 0; j < this.columnCount; j++) {
+      if (pos.x < (j + 1) * (this.cubeTemplate.width + this.space)) {
+        cell.column = j;
+        break;
       }
     }
 
-    cc.warn("invalid touch position");
+    if (pos.y > this.rowCount * (this.cubeTemplate.height + this.space)) {
+      cell.row = this.rowCount - 1;
+    }
+    if (pos.y <= 0) {
+      cell.row = 0;
+    }
+
     return cell;
   },
   isSameCube: function isSameCube(cube1, cube2) {
@@ -221,10 +227,6 @@ var GameManager = cc.Class({
   cubeMoved: function cubeMoved(cube) {
     cc.log("cube moved");
     var cell = this.posToPoint(cube.position);
-    // if (this.cubes[cell.row][cell.column]){
-    //   cc.error("can not move cube");
-    //   return;
-    // }
 
     var cubeCom = cube.getComponent("cube");
     var oldCell = cubeCom.cell;
@@ -236,13 +238,6 @@ var GameManager = cc.Class({
       cc.log("remove old cube,cell:", JSON.stringify(oldCell));
       this.cubes[oldCell.row][oldCell.column] = null;
     }
-    // else if(this.cubes[oldCell.row][oldCell.column]&&this.cubes[oldCell.row][oldCell.column]!==cube){//当前位置已存在
-    //   if (cell.row>=this.cubes.length-2){
-    //     cc.warn("move to top");
-    //     return;
-    //   }
-    //   cell.row+=1;
-    // }
 
     this.cubes[cell.row][cell.column] = cube;
     cubeCom.setCellPos(cell);
@@ -295,8 +290,9 @@ var GameManager = cc.Class({
   },
   isDead: function isDead() {
     var topLine = this.cubes[this.cubes.length - 1];
+    var topline2 = this.cubes[this.cubes.length - 2];
     for (var i = 0; i < topLine.length; i++) {
-      if (topLine[i]) {
+      if (topLine[i] && topline2[i]) {
         return true;
       }
     }
@@ -318,11 +314,9 @@ var GameManager = cc.Class({
           continue;
         }
         if (cube.getComponent("cube").state === _consts.CubeState.Bombing) {
-          this.removeCube(cube);
           continue;
         }
         cube.emit("move-up");
-        // this.cubes[i][j]=null;
       }
     }
 
@@ -338,7 +332,7 @@ var GameManager = cc.Class({
         _this3.cubes[0][_i2] = _cube;
         // cube.emit("move-up");
       }
-    }, 100);
+    }, 200);
   },
   gameOver: function gameOver() {
     this.setState(_consts.GameState.Over);
@@ -381,6 +375,17 @@ var GameManager = cc.Class({
     // }
     // // node.getComponent(node.name).init(index);
     // node.active=false;
+  },
+  createAd: function createAd() {
+    _platform2.default.instance.createdAd({
+      adsId: "xxfc",
+      success: function success(ad) {
+        cc.log("create ad success,ad:", JSON.stringify(ad));
+      },
+      fail: function fail(err) {
+        cc.log("create ad fail,err:", JSON.stringify(err));
+      }
+    });
   }
 });
 

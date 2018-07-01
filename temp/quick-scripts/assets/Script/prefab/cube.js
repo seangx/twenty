@@ -130,6 +130,7 @@ cc.Class({
     this.state = state;
   },
   update: function update(dt) {
+
     //添加新行时暂停下落
     switch (this.state) {
       case _consts.CubeState.Bombing:
@@ -284,7 +285,7 @@ cc.Class({
     var moveTo = cc.moveTo(0.2, cc.pAdd(this.node.position, cc.p(0, this.node.height + gameManager.space)));
     this.node.runAction(cc.sequence(moveTo, cc.callFunc(function () {
       _this.activePhysics();
-      _this.setState(_consts.CubeState.Touched);
+      // this.setState(CubeState.Touched);
     })));
   },
   onMoveUp: function onMoveUp() {

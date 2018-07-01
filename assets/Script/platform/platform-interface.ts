@@ -12,4 +12,6 @@ export default abstract class PlatformInterface {
   public abstract displayFriendRankList(openid);
   public abstract displayGroupRankList(openid);
   public abstract shareAppMessage(title,imgUrl,cb:Function);
+  public abstract createdAd({});
+  public abstract onAdChange(cb:Function);
 }

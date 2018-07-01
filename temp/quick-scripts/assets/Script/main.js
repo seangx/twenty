@@ -44,6 +44,8 @@ cc.Class({
     this.initProgress();
     cc.game.on("max-level-changed", this.onMaxLevelChanged, this);
     cc.game.on("game-over", this.onGameOver, this);
+
+    gameManager.createAd();
   },
   onDestroy: function onDestroy() {
     cc.game.off("max-level-changed", this.onMaxLevelChanged, this);

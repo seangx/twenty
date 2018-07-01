@@ -55,8 +55,8 @@
     "relativePath": "Texture"
   },
   "cc76203b-87f5-4a97-b925-1ece5c3b1370": {
-    "asset": 1530119841250,
-    "meta": 1530119841291,
+    "asset": 1530421677539,
+    "meta": 1530421677562,
     "relativePath": "Scene/main.fire"
   },
   "f7b72234-e388-4767-9b50-08f68011dcf6": {
@@ -70,8 +70,8 @@
     "relativePath": "Script/prefab"
   },
   "16c6ebb6-f408-49b0-958c-71bc8a7b8b97": {
-    "asset": 1530372694017,
-    "meta": 1530372694035,
+    "asset": 1530388807024,
+    "meta": 1530388807032,
     "relativePath": "prefab/cube.prefab"
   },
   "397949c1-ae6f-41c3-adb2-6bf9095493b4": {
@@ -674,16 +674,6 @@
     "meta": 1529824542701,
     "relativePath": "anim/game-over-role-shake.anim"
   },
-  "bb13223b-594d-4b72-b75e-a19e78754b0b": {
-    "asset": 1529845123011,
-    "meta": 1529845441196,
-    "relativePath": "Script/platform/platform-interface.ts"
-  },
-  "b562857e-3bab-4f23-ade6-1458cc73c13d": {
-    "asset": 1529845123015,
-    "meta": 1529845441298,
-    "relativePath": "Script/platform/web-platform.ts"
-  },
   "dce4a46e-c3f9-4cf2-a4ed-e7f8a90d3cdc": {
     "asset": 1529853366000,
     "meta": 1529866173216,
@@ -743,11 +733,6 @@
     "asset": 1530033396176,
     "meta": 1530033406697,
     "relativePath": "Script/pannel/star-description.js"
-  },
-  "52a0560e-d305-49c3-b872-04686a6900fb": {
-    "asset": 1530033396180,
-    "meta": 1530033406711,
-    "relativePath": "Script/platform/wx-platform.ts"
   },
   "71561142-4c83-4933-afca-cb7a17f67053": {
     "asset": 1523971143000,
@@ -934,19 +919,44 @@
     "meta": 1530121141729,
     "relativePath": "prefab/webview.prefab"
   },
+  "bb13223b-594d-4b72-b75e-a19e78754b0b": {
+    "asset": 1530386658863,
+    "meta": 1530387348948,
+    "relativePath": "Script/platform/platform-interface.ts"
+  },
+  "b562857e-3bab-4f23-ade6-1458cc73c13d": {
+    "asset": 1530386658866,
+    "meta": 1530387349055,
+    "relativePath": "Script/platform/web-platform.ts"
+  },
+  "52a0560e-d305-49c3-b872-04686a6900fb": {
+    "asset": 1530387320950,
+    "meta": 1530387349073,
+    "relativePath": "Script/platform/wx-platform.ts"
+  },
+  "172f1aa2-2221-4739-9495-8a9e36966d24": {
+    "asset": 1530387346765,
+    "meta": 1530387351281,
+    "relativePath": "Script/libs/cross-sdk-conf.js"
+  },
+  "3dd4d0ed-7883-4b01-b2ab-1fe8b2fcb62d": {
+    "asset": 1530030271225,
+    "meta": 1530387351281,
+    "relativePath": "Script/libs/cross-sdk.min.js"
+  },
   "280c3aec-6492-4a9d-9f51-a9b00b570b4a": {
-    "asset": 1530126166205,
-    "meta": 1530126169719,
+    "asset": 1530388596727,
+    "meta": 1530388610368,
     "relativePath": "Script/main.js"
   },
-  "4379445b-0e13-48a3-9f39-f09051eb5200": {
-    "asset": 1530357302527,
-    "meta": 1530357350062,
-    "relativePath": "Script/game-manager.js"
-  },
   "1b9f6d26-07ee-4a13-ac83-497bb8e05bf2": {
-    "asset": 1530385087151,
-    "meta": 1530385089292,
+    "asset": 1530430968891,
+    "meta": 1530430970947,
     "relativePath": "Script/prefab/cube.js"
+  },
+  "4379445b-0e13-48a3-9f39-f09051eb5200": {
+    "asset": 1530433198417,
+    "meta": 1530433203963,
+    "relativePath": "Script/game-manager.js"
   }
 }

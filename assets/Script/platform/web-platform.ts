@@ -48,5 +48,8 @@ export default class WebPlatform extends PlatformInterface {
   public shareAppMessage(title,imgUrl,cb){
 
   }
+
+  public createdAd(obj){};
+  public onAdChange(cb:Function){};
 }
 

@@ -63,7 +63,7 @@
             "width": 1127
           },
           {
-            "active": 0,
+            "active": 1,
             "children": [
               "inspector",
               "builder"
@@ -110,7 +110,8 @@
       "panels": [
         "project-settings"
       ]
-    }
+    },
+    "worker": {}
   },
   "panels": {
     "project-settings": {

@@ -498,7 +498,7 @@
     "id": 0
   },
   {
-    "__type__": "cc.PhysicsPolygonCollider",
+    "__type__": "cc.PhysicsCircleCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -516,48 +516,7 @@
       "x": 0,
       "y": 0
     },
-    "points": [
-      {
-        "__type__": "cc.Vec2",
-        "x": -50,
-        "y": -60
-      },
-      {
-        "__type__": "cc.Vec2",
-        "x": 50,
-        "y": -60
-      },
-      {
-        "__type__": "cc.Vec2",
-        "x": 60,
-        "y": -50
-      },
-      {
-        "__type__": "cc.Vec2",
-        "x": 60,
-        "y": 50
-      },
-      {
-        "__type__": "cc.Vec2",
-        "x": 50,
-        "y": 60
-      },
-      {
-        "__type__": "cc.Vec2",
-        "x": -50,
-        "y": 60
-      },
-      {
-        "__type__": "cc.Vec2",
-        "x": -60,
-        "y": 50
-      },
-      {
-        "__type__": "cc.Vec2",
-        "x": -60,
-        "y": -50
-      }
-    ]
+    "_radius": 60
   },
   {
     "__type__": "cc.PrefabInfo",

@@ -1,6 +1,9 @@
 import PlatformInterface from './platform-interface';
 const sdk = require("../libs/sdk.min.js");
 const conf = require('../libs/sdk-conf.js');
+const crossSDK=require("../libs/cross-sdk.min.js");
+var crossConf=require("../libs/cross-sdk-conf.js");
+
 
 export default class WXPlatform extends PlatformInterface {
   public init(): boolean {
@@ -95,6 +98,13 @@ export default class WXPlatform extends PlatformInterface {
     })
   }
 
+  public createdAd(obj){
+    crossSDK.createAd(obj);
+  };
+  public onAdChange(cb:Function){
+    crossSDK.onChange(cb);
+  };
+
   public login(cb) {
     sdk.decodeLogin((user, error, checkedSession)=> {
       if (!cb || typeof cb !== "function") {
@@ -105,6 +115,8 @@ export default class WXPlatform extends PlatformInterface {
         return;
       }
       console.log("login success, user=", JSON.stringify(user));
+      crossConf.openID=user.userInfo.userId3;
+      crossSDK.init(crossConf);
       cb(null, user.userInfo);
     }, ()=> {
       let sys = wx.getSystemInfoSync();
